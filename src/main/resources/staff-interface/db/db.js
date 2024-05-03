@@ -9,3 +9,7 @@ var itemDB = [
     {id:"I00-002",description:"Sunlight",quantity: 150,price: 345.00},
     {id:"I00-003",description:"Light Boy",quantity: 400,price: 245.00}
 ];
+
+var orderDB = [
+
+];

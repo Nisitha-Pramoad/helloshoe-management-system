@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>ShopMate</title>
+    <title>HelloShoe</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,7 +15,7 @@
     <script src="https://kit.fontawesome.com/fb497e39bc.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/customerStyles.css">
+    <link rel="stylesheet" href="css/customerStyles.css">
 </head>
 
 <body>
@@ -23,7 +23,9 @@
 <!-- header -->
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark" aria-label="Third navbar example">
     <div class="container-fluid">
-        <a class="navbar-brand custom-navbar-brand" href="#"><i class="fa-solid fa-store"></i> ShopMate</a>
+        <a class="navbar-brand custom-navbar-brand" href="#"><i class="fa-solid fa-store"></i> HelloShoe</a>
+
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03"
                 aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -39,25 +41,17 @@
                     <a class="nav-link active" aria-current="page" href="#" id="lnkCustomer">Customer</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#" id="lnkItem">Items</a>
+                    <a class="nav-link active" aria-current="page" href="#" id="lnkItem">Products</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#" id="lnkOrders">Orders</a>
+                    <a class="nav-link active" aria-current="page" href="#" id="lnkOrders">Place Order</a>
                 </li>
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
-                       aria-expanded="false">Others</a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#" id="lnkOrderDetails">Orders</a>
                 </li>
             </ul>
             <div class="text-end">
-                <button type="button" class="btn btn-outline-light me-2 btn-sm"><i class="fa-solid fa-user"></i>
-                    Sign up</button>
                 <button type="button" class="btn custom-btn-search btn-sm"><i class="fa-solid fa-right-from-bracket"></i>
                     LogOut</button>
             </div>
@@ -118,27 +112,27 @@
                                         <form>
                                             <div class="form-row">
                                                 <div class="form-group">
-                                                    <label for="inputEmail4">Customer ID:</label>
+                                                    <label for="txtCustomerID">Customer ID:</label>
                                                     <input class="form-control" id="txtCustomerID"
                                                            placeholder="C001">
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="inputPassword4">Customer Name:</label>
+                                                    <label for="txtCustomerName">Customer Name:</label>
                                                     <input class="form-control" id="txtCustomerName"
                                                            placeholder="Nimal">
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="inputPassword4">Customer Age:</label>
+                                                    <label for="txtCustomerAge">Customer Age:</label>
                                                     <input class="form-control" id="txtCustomerAge"
                                                            placeholder="23">
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="inputPassword4">Customer Address:</label>
+                                                    <label for="txtCustomerAddress">Customer Address:</label>
                                                     <input class="form-control" id="txtCustomerAddress"
                                                            placeholder="kandy">
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="inputPassword4">Customer Salary:</label>
+                                                    <label for="txtCustomerSalary">Customer Salary:</label>
                                                     <input class="form-control" id="txtCustomerSalary"
                                                            placeholder="98,000.00">
                                                 </div>
@@ -196,16 +190,16 @@
     <section id="search_form_Item">
 
         <div class="container-fluid spacing_bet">
-            <h1 class="title_name"><i class="fa-solid fa-users"></i> Items</h1>
+            <h1 class="title_name"><i class="fa-solid fa-users"></i> Products</h1>
 
             <div class="row">
                 <div class="feature-box col-lg-8">
 
                     <div class="card">
-                        <h5 class="card-header">Item search</h5>
+                        <h5 class="card-header">Products search</h5>
                         <div class="card-body">
                             <input id="txtsearchItemId" class="form-control input_field_spacing" type="text"
-                                   placeholder="Input Item Name/Code Here">
+                                   placeholder="Input Products Name/Code Here">
                             <button type="button" class="btn btn-primary custom-btn-search" id="btnSearchItem">Search</button>
                         </div>
                     </div>
@@ -240,22 +234,22 @@
                                         <form>
                                             <div class="form-row">
                                                 <div class="form-group">
-                                                    <label for="inputEmail4">Item ID:</label>
+                                                    <label for="txtItemId">Item ID:</label>
                                                     <input class="form-control" id="txtItemId"
                                                            placeholder="I00-001">
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="inputPassword4">Item Name:</label>
+                                                    <label for="txtItemDescription">Item Name:</label>
                                                     <input class="form-control" id="txtItemDescription"
                                                            placeholder="Sunlight">
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="inputPassword4">Item Quantity:</label>
+                                                    <label for="txtItemQuantity">Item Quantity:</label>
                                                     <input class="form-control" id="txtItemQuantity"
                                                            placeholder="2">
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="inputPassword4">Item Price:</label>
+                                                    <label for="txtItemPrice">Item Price:</label>
                                                     <input class="form-control" id="txtItemPrice"
                                                            placeholder="60.00">
                                                 </div>
@@ -311,86 +305,49 @@
                 <div class="feature-box col-lg-4">
 
                     <div class="card">
-                        <h5 class="card-header card_custom_header">Invoice Details</h5>
+                        <h5 class="card-header card_custom_header">Customer Details</h5>
                         <div class="card-body">
 
                             <!-- content -->
                             <form>
                                 <div class="row">
                                     <div class=" col-sm-6">
-                                        <label for="inputEmail4">Order ID:</label>
-                                        <input type="text" class="form-control" id="inputEmail4" placeholder="D001">
+                                        <label for="txtOrderId" class="form-label">Order ID:</label>
+                                        <input type="text" class="form-control" id="txtOrderId" placeholder="Order ID:">
                                     </div>
                                     <div class=" col-sm-6">
-                                        <div class="container">
-                                            <label class="datepicker_label">Date: </label>
-                                            <div style="width: 160px;" id="datepicker" class="input-group date"
-                                                 data-date-format="mm-dd-yyyy">
-                                                <input class="form-control" type="text" readonly />
-                                                <span class="input-group-addon"></span>
-                                            </div>
-                                        </div>
+                                        <label class="datepicker_label">Date: </label>
+                                        <input type="text" class="form-control" id="txtDate">
 
-                                        <script src="https://code.jquery.com/jquery-3.6.1.min.js"
-                                                integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
-                                                crossorigin="anonymous">
-                                        </script>
-                                        <script>
-                                            $(function () {
-                                                $("#datepicker").datepicker({
-                                                    autoclose: true,
-                                                    todayHighlight: true,
-                                                }).datepicker('update', new Date());
-                                            });
-                                        </script>
-                                        <script
-                                                src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-                                                integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-                                                crossorigin="anonymous">
-                                        </script>
-                                        <script
-                                                src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-                                                integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-                                                crossorigin="anonymous">
-                                        </script>
-                                        <script
-                                                src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js">
-                                        </script>
+
                                     </div>
                                 </div>
 
                                 <div class="row">
+
                                     <div class="col-sm-6">
-                                        <label for="inputEmail4">Customer:</label>
-                                        <select id="" class="form-control">
-                                            <option selected>Choose...</option>
-                                            <option>...</option>
+                                        <label  class="form-label">Customer ID</label>
+                                        <select class="form-select" aria-label="Default select example" id="cmbCustomer">
+                                            <option selected>Customer ID</option>
                                         </select>
                                     </div>
-                                    <div class="col-sm-6">
-                                        <label for="inputEmail4">Customer Id:</label>
-                                        <input type="text" class="form-control" id="" placeholder="C001">
-                                    </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <label for="inputEmail4">Name:</label>
-                                        <input type="text" class="form-control" id=""
-                                               placeholder="Nimal">
+                                        <label for="txtCustomerNameCmb">Name:</label>
+                                        <input type="text" class="form-control" id="txtCustomerNameCmb" placeholder="Nimal">
                                     </div>
                                     <div class="col-sm-6">
-                                        <label for="inputEmail4">Salary:</label>
-                                        <input type="text" class="form-control" id=""
-                                               placeholder="100,000.00">
+                                        <label for="txtCustomerSalaryCmb">Salary:</label>
+                                        <input type="text" class="form-control" id="txtCustomerSalaryCmb" placeholder="100,000.00">
                                     </div>
                                 </div>
 
                                 <div class="row col">
                                     <div class="">
-                                        <label for="inputEmail4">Address:</label>
-                                        <input type="text" class="form-control" id=""
-                                               placeholder="Kandy">
+                                        <label for="txtCustomerAddressCmb">Address:</label>
+                                        <input type="text" class="form-control" id="txtCustomerAddressCmb" placeholder="Kandy">
                                     </div>
                                 </div>
                             </form>
@@ -403,52 +360,45 @@
                 <!-- item select card-->
                 <div class="feature-box col-lg-5">
                     <div class="card">
-                        <h5 class="card-header card_custom_header">Invoice Details</h5>
+                        <h5 class="card-header card_custom_header">Product Details</h5>
                         <div class="card-body">
 
                             <!-- content -->
                             <form>
                                 <div class="row">
-                                    <div class=" col-md-6">
-                                        <label for="inputEmail4">Item:</label>
-                                        <select id="" class="form-control">
-                                            <option selected>Choose...</option>
-                                            <option>...</option>
+                                    <div class=" col-md-12">
+                                        <label for="cmdItems" class="form-label">Item ID</label>
+                                        <select class="form-select" aria-label="Default select example" id="cmdItems">
+
                                         </select>
-                                    </div>
-                                    <div class=" col-md-6">
-                                        <label for="inputEmail4">Item Code:</label>
-                                        <input type="text" class="form-control" id="" placeholder="P001">
                                     </div>
                                 </div>
 
                                 <div class="row ">
                                     <div class="col-md-5">
-                                        <label for="inputEmail4">Item Name:</label>
-                                        <input type="text" class="form-control" id=""
-                                               placeholder="Keerisamba 5kg">
+                                        <label for="txtGetItemName">Item Name:</label>
+                                        <input type="text" class="form-control" id="txtGetItemName" placeholder="Item Name">
                                     </div>
                                     <div class="col-md-4">
-                                        <label for="inputEmail4">Price:</label>
-                                        <input type="text" class="form-control" id=""
-                                               placeholder="525.00">
+                                        <label for="txtGetItemPrice">Price:</label>
+                                        <input type="text" class="form-control" id="txtGetItemPrice" placeholder="Price">
                                     </div>
                                     <div class="col-md-3">
-                                        <label for="inputEmail4">QtyOnH:</label>
-                                        <input type="text" class="form-control" id="" placeholder="200">
+                                        <label for="txtGetQtyOnHand">QtyOnH:</label>
+                                        <input type="text" class="form-control" id="txtGetQtyOnHand" placeholder="QtyOnH">
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <label style="margin-top: 3%;" for="inputEmail4">Order Quantity:</label>
-                                        <input type="text" class="form-control" id="" placeholder="2">
+                                        <label style="margin-top: 3%;" for="txtOrderQty">Order Quantity:</label>
+                                        <input type="text" class="form-control" id="txtOrderQty" placeholder="Order Quantity">
                                     </div>
                                 </div>
 
                                 <div class="row ">
                                     <div>
-                                        <button type="button" class="btn btn-danger btn_to_left">Save</button>
+                                        <button type="button" class="btn btn-danger btn_to_left" id="btnAddItem">Add Item</button>
                                     </div>
                                 </div>
 
@@ -468,11 +418,22 @@
 
                             <!-- content -->
                             <form>
-                                <div class="row total_spacing">
-                                    <div class="form-row">
-                                        <div>
-                                            <h3>Total: Rs.0/=</h3>
-                                            <h3>SubTotal: Rs.0/=</h3>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="col-sm-6">
+                                            <span  style="font-size: 13px;">Total : </span>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <span id="txtTotal" style="font-size: 30px;color: #15181b;">0</span> Rs/=
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <div class="col-sm-6">
+                                            <span  style="font-size: 13px;">SubTotal : </span>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <span id="txtSubtotal" style="color: #25b003;font-size: 30px;">0</span> Rs/=
                                         </div>
                                     </div>
                                 </div>
@@ -480,30 +441,25 @@
 
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <label for="inputEmail4">Cash:</label>
-                                        <input type="text" class="form-control" id=""
-                                               placeholder="525.00">
+                                        <label for="txtCash">Cash:</label>
+                                        <input type="text" class="form-control" id="txtCash" placeholder="Cash">
                                     </div>
                                     <div class="col-md-6">
-                                        <label for="inputState">Discount</label>
-                                        <select id="inputState" class="form-control">
-                                            <option selected>Choose...</option>
-                                            <option>10</option>
-                                        </select>
+                                        <label for="txtDiscount">Discount</label>
+                                        <input type="text" class="form-control" id="txtDiscount" placeholder="Discount">
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <label for="inputEmail4">Cash:</label>
-                                        <input type="text" class="form-control" id=""
-                                               placeholder="525.00">
+                                        <label for="txtBalance">Balance:</label>
+                                        <input type="text" class="form-control" id="txtBalance" placeholder="Balance">
                                     </div>
                                 </div>
 
                                 <div class="row text-center">
                                     <div col-md-4>
-                                        <button type="button" class="btn btn-success btnn-to-space">Save</button>
+                                        <button type="button" class="btn btn-success btnn-to-space" id="btnPurchase">Purchase</button>
                                     </div>
                                 </div>
 
@@ -520,34 +476,87 @@
     <!-- table section -->
     <section class="spacing_bet">
         <table class="table">
-            <thead class="table-dark">
+            <thead class="custom-table-color">
             <tr>
-                <th scope="col">customerId</th>
-                <th scope="col">Name</th>
-                <th scope="col">Age</th>
-                <th scope="col">Address</th>
-                <th scope="col">Salary</th>
+                <th scope="col">Item Code</th>
+                <th scope="col">Item Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Total</th>
             </tr>
             </thead>
-            <tbody>
+            <tbody id="tblPlaceOrder">
 
             </tbody>
         </table>
     </section>
 </main>
 
+<!--start order details-->
+<main class="container-fluid " id="orderDetailsContent">
+    <!-- search item  -->
+    <section id="order detail form">
+
+        <div class="container-fluid spacing_bet">
+            <h1 class="title_name"><i class="fa-solid fa-users"></i> Order Details</h1>
+
+            <div class="row">
+                <div class="feature-box col-lg-8">
+
+                    <div class="card">
+                        <h5 class="card-header">search order</h5>
+                        <div class="card-body">
+                            <input id="txtsearchOrderId" class="form-control input_field_spacing" type="text"
+                                   placeholder="Input Order Id Here">
+                            <button type="button" class="btn btn-primary custom-btn-search" id="btnSearchOrder">Search</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section class="spacing_bet">
+        <table class="table">
+            <thead class="custom-table-color">
+            <tr>
+                <th scope="col">Order Id</th>
+                <th scope="col">Date</th>
+                <th scope="col">Customer Id</th>
+                <th scope="col">Item Id</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Total</th>
+            </tr>
+            </thead>
+            <tbody id="tblOrders">
+
+            </tbody>
+        </table>
+    </section>
+
+</main>
+
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="controllers/DashboardController.js"></script>
+
 <script src="db/db.js"></script>
+
 <script src="models/Customer.js"></script>
 <script src="models/Item.js"></script>
+
+<script src="controllers/DashboardController.js"></script>
 <script src="controllers/CustomerController.js"></script>
 <script src="controllers/ItemController.js"></script>
+<script src="controllers/PlaceOrderController.js"></script>
+
 <script src="controllers/validations/CustomerValidations.js"></script>
 <script src="controllers/validations/ItemValidations.js"></script>
+<script src="controllers/validations/PlaceOrderValidation.js"></script>
 </body>
 
 </html>
