@@ -16,6 +16,8 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/customerStyles.css">
+
+
 </head>
 
 <body>
@@ -37,34 +39,63 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#" id="lnkHome">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#" id="lnkCustomer">Customer</a>
+                <li class="nav-item ">
+                    <a class="nav-link active" aria-current="page" href="#" id="lnkCustomer">Customers</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#" id="lnkItem">Products</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false" >Products</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#" id="lnkItem">Products</a></li>
+                        <li><a class="dropdown-item" href="#" id="lnkSuppliers">Suppliers</a></li>
+                    </ul>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#" id="lnkOrders">Place Order</a>
                 </li>
-
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#" id="lnkOrderDetails">Orders</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#" id="lnkStaff">Staff</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#" id="lnkSales">Sales</a>
+                </li>
             </ul>
             <div class="text-end">
-                <button type="button" class="btn custom-btn-search btn-sm"><i class="fa-solid fa-right-from-bracket"></i>
-                    LogOut</button>
+<!--                <a class="navbar-brand custom-navbar-brand" href="#"><i class="fa-solid fa-bell fa-sm"></i></a>-->
+                <button type="button" class="btn custom-btn-search btn-sm"><i class="fa-solid fa-right-from-bracket"></i>LogOut</button>
             </div>
         </div>
     </div>
 </nav>
 
-<main class="container-fluid " id="dashboardContent">
-
+<main class="container-fluid" id="dashboardContent">
+    <section id="welcome-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm d-flex justify-content-center"> <!-- Added justify-content-center class -->
+                    <div class="welcome-text">
+                        <h3>Good morning, Thomas!</h3>
+                        <p>Welcome to HelloShoe.</p>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="image-container">
+                        <img src="./assets/wallpaper.png" class="img-fluid" alt="Responsive image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </main>
 
+
+
+
+<!-- start customer  -->
 <main class="container-fluid " id="customerContent">
-    <!-- search customer  -->
+
     <section id="search_form_and_two_button">
 
         <div class="container-fluid spacing_bet">
@@ -76,8 +107,26 @@
                     <div class="card">
                         <h5 class="card-header">customer search</h5>
                         <div class="card-body">
-                            <input id="searchCusId" class="form-control input_field_spacing" type="text" placeholder="Input Name/NIC/Tp Here">
-                            <button type="button" class="btn btn-primary custom-btn-search" id="btnSearchCus">Search</button>
+
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                        <input id="searchCusId" class="form-control input_field_spacing" type="text" placeholder="Input Name/NIC/Tp Here">
+                                    </div>
+                                    <div class="col">
+                                        <select class="form-select" aria-label="Default select example" id="">
+                                            <option selected>fiter</option>
+                                            <option value="1">Loyalty Customers</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <button type="button" class="btn btn-primary custom-btn-search" id="btnSearchCus">Search</button>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 
@@ -150,10 +199,7 @@
                                 </div>
                             </div>
                         </div>
-
-
                     </div>
-
                 </div>
             </div>
 
@@ -185,8 +231,9 @@
 
 </main>
 
+<!-- start products  -->
 <main class="container-fluid " id="itemContent">
-    <!-- search item  -->
+
     <section id="search_form_Item">
 
         <div class="container-fluid spacing_bet">
@@ -198,9 +245,35 @@
                     <div class="card">
                         <h5 class="card-header">Products search</h5>
                         <div class="card-body">
-                            <input id="txtsearchItemId" class="form-control input_field_spacing" type="text"
-                                   placeholder="Input Products Name/Code Here">
-                            <button type="button" class="btn btn-primary custom-btn-search" id="btnSearchItem">Search</button>
+
+
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                        <input id="txtsearchItemId" class="form-control input_field_spacing" type="text" placeholder="Name/Code">
+                                    </div>
+                                    <div class="col">
+                                        <input class="form-control" id="" placeholder="price">
+                                    </div>
+                                    <div class="col">
+                                        <input class="form-control" id="" placeholder="name">
+                                    </div>
+                                    <div class="col">
+                                        <select class="form-select" aria-label="Default select example" id="">
+                                            <option selected>gender</option>
+                                        </select>
+                                    </div>
+                                    <div class="col">
+                                        <select class="form-select" aria-label="Default select example" id="">
+                                            <option selected>formal or casual</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <button type="button" class="btn btn-primary custom-btn-search" id="btnSearchItem">Search</button>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 
@@ -210,10 +283,7 @@
 
                     <div>
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn custom-btn-search" data-bs-toggle="modal"
-                                data-bs-target="#staticBackdropItem">
-                            New Item
-                        </button>
+                        <button type="button" class="btn custom-btn-search" data-bs-toggle="modal" data-bs-target="#staticBackdropItem">New Item</button>
                         <button type="button" class="btn btn-primary btn-warning"id="btnGetAllItems" >View All Items</button>
 
                         <!-- Modal -->
@@ -281,7 +351,7 @@
         <table class="table">
             <thead class="custom-table-color">
             <tr>
-                <th scope="col">Item Id</th>
+                <th scope="col">Product Id</th>
                 <th scope="col">Description</th>
                 <th scope="col">Quantity</th>
                 <th scope="col">Price</th>
@@ -295,8 +365,8 @@
 
 </main>
 
+<!-- start ordering section  -->
 <main class="container-fluid " id="orderContent">
-    <!-- ordering section  -->
     <section id="search_form_and_two_button">
 
         <div class="container-fluid spacing_bet">
@@ -357,53 +427,51 @@
 
                 </div>
 
-                <!-- item select card-->
+                <!-- product select card-->
                 <div class="feature-box col-lg-5">
                     <div class="card">
                         <h5 class="card-header card_custom_header">Product Details</h5>
                         <div class="card-body">
 
                             <!-- content -->
-                            <form>
+                            <div class="container">
                                 <div class="row">
-                                    <div class=" col-md-12">
+                                    <div class="col">
                                         <label for="cmdItems" class="form-label">Item ID</label>
                                         <select class="form-select" aria-label="Default select example" id="cmdItems">
 
                                         </select>
                                     </div>
                                 </div>
-
-                                <div class="row ">
-                                    <div class="col-md-5">
+                                <div class="row">
+                                    <div class="col">
                                         <label for="txtGetItemName">Item Name:</label>
                                         <input type="text" class="form-control" id="txtGetItemName" placeholder="Item Name">
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col">
                                         <label for="txtGetItemPrice">Price:</label>
                                         <input type="text" class="form-control" id="txtGetItemPrice" placeholder="Price">
                                     </div>
-                                    <div class="col-md-3">
+                                    <div class="col">
                                         <label for="txtGetQtyOnHand">QtyOnH:</label>
                                         <input type="text" class="form-control" id="txtGetQtyOnHand" placeholder="QtyOnH">
                                     </div>
                                 </div>
-
                                 <div class="row">
-                                    <div class="col-md-12">
+                                    <div class="col">
                                         <label style="margin-top: 3%;" for="txtOrderQty">Order Quantity:</label>
                                         <input type="text" class="form-control" id="txtOrderQty" placeholder="Order Quantity">
                                     </div>
                                 </div>
-
-                                <div class="row ">
-                                    <div>
-                                        <button type="button" class="btn btn-danger btn_to_left" id="btnAddItem">Add Item</button>
+                                <div class="row">
+                                    <div class="col" id="custom-spacing-adding-for-add-new-button">
+                                        <button type="button" class="btn btn_to_left" id="btnAddItem">Add Item</button>
                                     </div>
                                 </div>
+                            </div>
 
 
-                            </form>
+
 
                         </div>
                     </div>
@@ -459,7 +527,7 @@
 
                                 <div class="row text-center">
                                     <div col-md-4>
-                                        <button type="button" class="btn btn-success btnn-to-space" id="btnPurchase">Purchase</button>
+                                        <button type="button" class="btn btn-success btnn-to-space" id="btnPurchase">Pay</button>
                                     </div>
                                 </div>
 
@@ -494,7 +562,6 @@
 
 <!--start order details-->
 <main class="container-fluid " id="orderDetailsContent">
-    <!-- search item  -->
     <section id="order detail form">
 
         <div class="container-fluid spacing_bet">
@@ -536,13 +603,361 @@
             </tbody>
         </table>
     </section>
+</main>
 
+
+
+<!--    start suppliers content-->
+<main class="container-fluid " id="suppliersContent">
+    <section id="suppliers-form">
+
+        <div class="container-fluid spacing_bet">
+            <div class="container">
+                <div class="row justify-content-between align-items-center">
+                    <div class="col-sm">
+                        <h1 class="title_name"><i class="fa-solid fa-users"></i> Suppliers</h1>
+                    </div>
+                    <div class="col-auto">
+                        <button type="button" class="btn btn-primary custom-btn-search" data-bs-toggle="modal" data-bs-target="#suppliersPopUp" >Add Suppliers</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="feature-box col-lg-4">
+            <div>
+
+                <!-- Modal -->
+                <div class="modal fade " id="suppliersPopUp" data-bs-backdrop="static"
+                     data-bs-keyboard="false" tabindex="-1" aria-labelledby="suppliersPopUpLabel"
+                     aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="suppliersPopUpLabel">New Supplier</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-row">
+
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col custom-column">
+                                                    <label for="cmbSupplierType">Supplier Type:</label>
+                                                    <select class="form-select" aria-label="Default select example" id="cmbSupplierType">
+                                                        <option selected>Select</option>
+                                                        <option value="1">Local</option>
+                                                        <option value="2">International</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col custom-column">
+                                                    <label for="txtSupplierCompanyName">Company:</label>
+                                                    <input class="form-control" id="txtSupplierCompanyName" placeholder="Company name">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col custom-column">
+                                                    <label for="txtSupplierCountry">Country/region:</label>
+                                                    <input class="form-control" id="txtSupplierCountry" placeholder="Country">
+                                                </div>
+                                                <div class="col custom-column">
+                                                    <label for="txtSupplierAddress">Address:</label>
+                                                    <input class="form-control" id="txtSupplierAddress" placeholder="Address">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col custom-column">
+                                                    <label for="txtSupplierCity">City:</label>
+                                                    <input class="form-control" id="txtSupplierCity" placeholder="Country">
+                                                </div>
+                                                <div class="col custom-column">
+                                                    <label for="txtSupplierPostalCode">Postal Code:</label>
+                                                    <input class="form-control" id="txtSupplierPostalCode" placeholder="Postal Code">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col custom-column">
+                                                    <label for="txtEmailAddress">Email Address:</label>
+                                                    <input class="form-control" id="txtEmailAddress" placeholder="Email Address">
+                                                </div>
+                                                <div class="col custom-column">
+                                                    <label for="txtSupplierPhoneNumber">Phone Number:</label>
+                                                    <input class="form-control" id="txtSupplierPhoneNumber" placeholder="Phone Number">
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+
+                                    </div>
+                                </form>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-success" id="btnSupplierSave">Save</button>
+                                <button type="button" class="btn btn-success" id="btnSupplierUpdate">Update</button>
+                                <button type="button" class="btn btn-success" id="btnSupplierDelete">Delete</button>
+                                <button type="button" class="btn btn-success" id="btn-clear-Supplier-form">ClearALl</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- table section -->
+    <section class="spacing_bet">
+        <table class="table">
+            <thead class="custom-table-color">
+            <tr>
+                <th scope="col">Supplier Id</th>
+                <th scope="col">Supplier Type</th>
+                <th scope="col">Company</th>
+                <th scope="col">Country/region</th>
+                <th scope="col">Address</th>
+                <th scope="col">Email Address</th>
+                <th scope="col">Phone Number</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody id="tblSupplier">
+
+            </tbody>
+        </table>
+    </section>
+</main>
+
+
+<!--    Staff section start-->
+<main class="container-fluid " id="staffContent">
+
+    <section id="staff form">
+
+        <div class="container-fluid spacing_bet">
+            <div class="container">
+                <div class="row justify-content-between align-items-center">
+                    <div class="col-sm">
+                        <h1 class="title_name"><i class="fa-solid fa-users"></i> Staff</h1>
+                    </div>
+                    <div class="col-auto">
+                        <button type="button" class="btn btn-primary custom-btn-search" data-bs-toggle="modal" data-bs-target="#staffPopUp" >Add Staff</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="feature-box col-lg-4">
+            <div>
+
+                <!-- Modal -->
+                <div class="modal fade " id="staffPopUp" data-bs-backdrop="static"
+                     data-bs-keyboard="false" tabindex="-1" aria-labelledby="staffPopUpLabel"
+                     aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="staffPopUpLabel">New Staff</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-row">
+
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col custom-column">
+                                                    <label for="txtFirstName">Employee First Name:</label>
+                                                    <input class="form-control" id="txtFirstName" placeholder="Employee First Name">
+                                                </div>
+                                                <div class="col custom-column">
+                                                    <label for="txtLastName">Employee Last Name:</label>
+                                                    <input class="form-control" id="txtLastName" placeholder="Employee Last Name">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col custom-column">
+                                                    <label for="txtBirthday">Employee Birthday:</label>
+                                                    <input class="form-control" id="txtBirthday" placeholder="Employee Birthday">
+                                                </div>
+                                                <div class="col custom-column">
+                                                    <label for="txtEmployeeEmail">Employee Email:</label>
+                                                    <input class="form-control" id="txtEmployeeEmail" placeholder="Employee Email">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col custom-column">
+                                                    <label for="txtEmployeeAddress">Employee Address:</label>
+                                                    <input class="form-control" id="txtEmployeeAddress" placeholder="Employee Address">
+                                                </div>
+                                                <div class="col custom-column">
+                                                    <label for="txtEmployeePhoneNumber">Employee Phone Number:</label>
+                                                    <input class="form-control" id="txtEmployeePhoneNumber" placeholder="Employee Phone Number">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col custom-column">
+                                                    <label for="cmbStaffRole">Role:</label>
+                                                    <select class="form-select" aria-label="Default select example" id="cmbStaffRole">
+                                                        <option selected>Select</option>
+                                                        <option value="1">Staff</option>
+                                                        <option value="2">Admin</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col custom-column">
+                                                    <label for="txtPinNumber">Pin Number:</label>
+                                                    <input class="form-control" id="txtPinNumber" placeholder="Pin Number">
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </form>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-success" id="btnEmployeSave">Save</button>
+                                <button type="button" class="btn btn-success" id="btnEmployeUpdate">Update</button>
+                                <button type="button" class="btn btn-success" id="btnEmployeDelete">Delete</button>
+                                <button type="button" class="btn btn-success" id="btn-clear-employe-form">ClearALl</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- table section -->
+    <section class="spacing_bet">
+        <table class="table">
+            <thead class="custom-table-color">
+            <tr>
+                <th scope="col">Employee Id</th>
+                <th scope="col">Employee Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Address</th>
+                <th scope="col">Phone Number</th>
+                <th scope="col">Role</th>
+            </tr>
+            </thead>
+            <tbody id="tblStaff">
+
+            </tbody>
+        </table>
+    </section>
+
+</main>
+
+
+<!--    sales section start-->
+<main class="container-fluid " id="salesContent">
+    <section id="sales-form">
+
+        <div class="container-fluid spacing_bet">
+            <div class="container">
+                <div class="row justify-content-between align-items-center">
+                    <div class="col-sm">
+                        <h1 class="title_name"><i class="fa-solid fa-users"></i> Analytics</h1>
+                    </div>
+                    <div class="col-auto">
+                        <select class="form-select" aria-label="Default select example" id="">
+                            <option selected>Filter Date</option>
+                            <option value="1">Last 30 days</option>
+                            <option value="1">Last 60 days</option>
+                            <option value="1">Last 06 month</option>
+                            <option value="1">This Year</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <div class="card ">
+                            <div class="card-body">
+                                <h5 class="card-title">Total Earnings</h5>
+                                <span  style="font-size: 16px;">Rs . 768,537</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="card ">
+                            <div class="card-body">
+                                <h5 class="card-title">Total Complete Sales</h5>
+                                <span  style="font-size: 16px;">650</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="card ">
+                            <div class="card-body">
+                                <h5 class="card-title">Returns</h5>
+                                <span  style="font-size: 16px;">4</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="card ">
+                            <div class="card-body">
+                                <h5 class="card-title">Earn In This Month</h5>
+                                <span  style="font-size: 16px;">Rs . 98,000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+            <!-- Chart 1 - Bootstrap Brain Component -->
+            <section class="py-3 py-md-5">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-lg-9 col-xl-8">
+                            <div class="card widget-card border-light shadow-sm">
+                                <div class="card-body p-4">
+                                    <div class="d-block d-sm-flex align-items-center justify-content-between mb-3">
+                                        <div class="mb-3 mb-sm-0">
+                                            <h5 class="card-title widget-card-title">Sales Overview</h5>
+                                        </div>
+                                        <div>
+                                            <select class="form-select text-secondary border-light-subtle">
+                                                <option value="1">March 2023</option>
+                                                <option value="2">April 2023</option>
+                                                <option value="3">May 2023</option>
+                                                <option value="4">June 2023</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div id="bsb-chart-1"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+    </section>
 </main>
 
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script src="https://unpkg.com/bs-brain@2.0.4/components/charts/chart-1/assets/controller/chart-1.js"></script>
 
 <script src="db/db.js"></script>
 

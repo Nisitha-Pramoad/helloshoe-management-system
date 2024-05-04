@@ -65,3 +65,43 @@
 .custom-table-color {
     color: #5c9404;
 }
+
+#custom-spacing-adding-for-add-new-button{
+    margin-bottom: 2.5%;
+    margin-top: 1.5%;
+}
+
+#btnAddItem{
+    color: white;
+    background-color: #49525d;
+}
+
+.custom-column {
+    margin-top: 10px; /* Adjust as needed */
+    margin-bottom: 10px; /* Adjust as needed */
+}
+
+.staff-buttons {
+    color: white;
+    background-color: #49525d;
+}
+
+/*welcome page*/
+#welcome-page {
+    margin-top: 80px; /* Add margin to the whole section */
+}
+
+.welcome-text {
+    text-align: center; /* Align text content to the center */
+    margin-top: 25%;
+}
+
+
+.image-container {
+    margin-top: 20px; /* Add margin at the top of the image */
+}
+
+.img-fluid {
+    max-width: 100%; /* Reduce image size to fit container */
+    height: auto; /* Maintain aspect ratio */
+}

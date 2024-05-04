@@ -112,12 +112,12 @@ $("#btnSearchItem").click(function () {
         $("#txtItemPrice").val(result.address);
 
     } else {
-        CustomerNotFoundMsg();
+        ItemNotFoundMsg();
         clearSearchCustomerFields();
     }
 });
 
-function CustomerNotFoundMsg() {
+function ItemNotFoundMsg() {
     alert("Item not found. Please check the information and try again.");
 }
 

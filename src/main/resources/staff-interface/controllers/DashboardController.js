@@ -24,6 +24,15 @@ function saveLastView(clickedID) {
         case "orderDetailContent":
             localStorage.setItem("view", "ORDERDETAILS");
             break;
+        case "staffContent":
+            localStorage.setItem("view", "STAFF");
+            break;
+        case "suppliersContent":
+            localStorage.setItem("view", "SUPPLIERS");
+            break;
+        case "salesContent":
+            localStorage.setItem("view", "SALES");
+            break;
     }
 }
 
@@ -45,13 +54,22 @@ function setTheLastView() {
         case "ORDERDETAILS":
             setView($("#orderDetailsContent"));
             break;
+        case "STAFF":
+            setView($("#staffContent"));
+            break;
+        case "SUPPLIERS":
+            setView($("#suppliersContent"));
+            break;
+        case "SALES":
+            setView($("#salesContent"));
+            break;
         default:
             setView($("#dashboardContent"));
     }
 }
 
 function clearAll() {
-    $("#dashboardContent,#customerContent,#itemContent,#orderContent,#orderDetailsContent").css('display', 'none');
+    $("#dashboardContent,#customerContent,#itemContent,#orderContent,#orderDetailsContent,#staffContent,#suppliersContent,#salesContent").css('display', 'none');
 }
 
 function setView(viewOb) {
@@ -80,6 +98,18 @@ $("#lnkOrders").click(function () {
 
 $("#lnkOrderDetails").click(function () {
     setView($("#orderDetailsContent"));
+});
+
+$("#lnkStaff").click(function () {
+    setView($("#staffContent"));
+});
+
+$("#lnkSuppliers").click(function () {
+    setView($("#suppliersContent"));
+});
+
+$("#lnkSales").click(function () {
+    setView($("#salesContent"));
 });
 
 //end of logics for SPA
