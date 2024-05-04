@@ -67,8 +67,8 @@
 }
 
 #custom-spacing-adding-for-add-new-button{
-    margin-bottom: 2.5%;
-    margin-top: 1.5%;
+    margin-bottom: 0.5%;
+    margin-top: 2.5%;
 }
 
 #btnAddItem{
@@ -101,7 +101,25 @@
     margin-top: 20px; /* Add margin at the top of the image */
 }
 
+.image-container img {
+    border-radius: 10px; /* Adjust the value as needed to control the roundness of the corners */
+}
+
 .img-fluid {
     max-width: 100%; /* Reduce image size to fit container */
     height: auto; /* Maintain aspect ratio */
+}
+
+
+#custom-spacing-adding-for-purchase-button {
+    margin-bottom: 2.5%;
+    margin-top: 8.0%;
+}
+
+#custom-spacing-adding-for-span-text {
+    margin-bottom: 9.5%;
+}
+
+.custom-spacing-adding-for-customer-details-card {
+    margin-bottom: 1.5%;
 }
