@@ -1,8 +1,12 @@
 package lk.helloshoe.shoeshopmanagement.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
 import java.sql.Timestamp;
 import java.util.Date;
 
+@Entity
 public class Customer {
 
     public enum Gender {
@@ -18,6 +22,7 @@ public class Customer {
         NEW
     }
 
+    @Id
     private String id;
     private String name;
     private Gender gender;  // Use enum type

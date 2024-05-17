@@ -1,4 +1,7 @@
 package lk.helloshoe.shoeshopmanagement.repository;
 
-public interface CustomerRepo {
+import lk.helloshoe.shoeshopmanagement.model.Customer;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface CustomerRepo extends JpaRepository<Customer, String> {
 }
