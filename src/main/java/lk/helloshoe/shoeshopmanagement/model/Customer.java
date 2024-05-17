@@ -1,7 +1,6 @@
 package lk.helloshoe.shoeshopmanagement.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.sql.Timestamp;
 import java.util.Date;
@@ -23,11 +22,16 @@ public class Customer {
     }
 
     @Id
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String name;
-    private Gender gender;  // Use enum type
+    @Enumerated(EnumType.STRING)
+    private Gender gender;
+    @Column(name="join_date_as_a_loyalty_customer")
     private Date joinDateAsALoyaltyCustomer;
+    @Enumerated(EnumType.STRING)
     private Level level;  // Use enum type
+    @Column(name="total_ponts")
     private Integer totalPoints;
     private Date dob;
     private String addressLine1;
@@ -35,15 +39,17 @@ public class Customer {
     private String addressLine3;
     private String addressLine4;
     private String addressLine5;
+    @Column(name="contact_no")
     private String contactNo;
     private String email;
+    @Column(name="recent_purchase_date_and_time")
     private Timestamp recentPurchaseDateAndTime;
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -158,4 +164,8 @@ public class Customer {
     public void setRecentPurchaseDateAndTime(Timestamp recentPurchaseDateAndTime) {
         this.recentPurchaseDateAndTime = recentPurchaseDateAndTime;
     }
+
+
+
+
 }
