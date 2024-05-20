@@ -1,5 +1,9 @@
 package lk.helloshoe.shoeshopmanagement.controller;
 
+import lk.helloshoe.shoeshopmanagement.dto.EmployeeDTO;
+import lk.helloshoe.shoeshopmanagement.service.EmployeeService;
+import lk.helloshoe.shoeshopmanagement.util.Gender;
+import lk.helloshoe.shoeshopmanagement.util.Role;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -35,7 +39,7 @@ public class EmployeeController {
     @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public void saveEmployee(@RequestParam("employeeCode") String code,
                              @RequestParam("employeeName") String name,
-                             @RequestParam("gender")Gender gender,
+                             @RequestParam("gender") Gender gender,
                              @RequestParam("status") String status,
                              @RequestParam("designation") String designation,
                              @RequestParam("accessRole") Role role,

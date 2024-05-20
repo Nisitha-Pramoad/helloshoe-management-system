@@ -2,11 +2,15 @@ package lk.helloshoe.shoeshopmanagement.dto;
 
 import lk.helloshoe.shoeshopmanagement.util.Gender;
 import lk.helloshoe.shoeshopmanagement.util.Role;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class EmployeeDTO {
     private String employeeCode;
     private String employeeName;
