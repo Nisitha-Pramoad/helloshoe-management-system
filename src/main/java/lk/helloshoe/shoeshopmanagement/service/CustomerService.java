@@ -1,20 +1,11 @@
 package lk.helloshoe.shoeshopmanagement.service;
 
-import lk.helloshoe.shoeshopmanagement.dao.CustomerDao;
-import lk.helloshoe.shoeshopmanagement.model.Customer;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import lk.helloshoe.shoeshopmanagement.dto.CustomerDTO;
 
 import java.util.List;
 
-@Service
-public class CustomerService {
+public interface CustomerService {
+    List<CustomerDTO> getAllCustomers();
+    CustomerDTO getCustomerDetails(String id);
 
-    @Autowired
-    CustomerDao customerDao;
-
-
-    public List<Customer> getAllCustomers() {
-        return customerDao.findAll();
-    }
 }
