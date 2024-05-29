@@ -1,13 +1,19 @@
 //load all existing customers
+//meeeeeeeee
+let customerCodes = [];
 getAllCustomers();
 
-$("#btnCustomer").click(function () {
-    if (checkAll()){
-        saveCustomer();
-    }else{
-        alert("Error");
-    }
-
+// $("#btnCustomer").click(function () {
+//     if (checkAll()){
+//         saveCustomer();
+//     }else{
+//         alert("Error");
+//     }
+//
+// });
+$("#btnSaveCustomer").click(function (){
+    saveCustomer();
+    clearCustomerInputField();
 });
 
 //get all customer event
@@ -65,66 +71,88 @@ $("#btn-clear1").click(function () {
 
 // CRUD operation Functions
 function saveCustomer() {
-    let customerID = $("#txtCustomerID").val();
-    //check customer is exists or not?
-    if (searchCustomer(customerID.trim()) == undefined) {
 
-        //if the customer is not available then add him to the array
-        let customerName = $("#txtCustomerName").val();
-        let customerAge = $("#txtCustomerAge").val();
-        let customerAddress = $("#txtCustomerAddress").val();
-        let customerSalary = $("#txtCustomerSalary").val();
-
-        //by using this one we can create a new object using
-        //the customer model with same properties
-        let newCustomer = Object.assign({}, customer);
-
-        //assigning new values for the customer object
-        newCustomer.id = customerID;
-        newCustomer.name = customerName;
-        newCustomer.age = customerAge;
-        newCustomer.address = customerAddress;
-        newCustomer.salary = customerSalary;
-
-        //add customer record to the customer array (DB)
-        customerDB.push(newCustomer);
-        clearCustomerInputFields();
-        getAllCustomers();
-
-    } else {
-        alert("Customer already exits.!");
-        clearCustomerInputFields();
-    }
 }
 
 function getAllCustomers() {
-    //clear all tbody data before add
     $("#tblCustomer").empty();
+    $.ajax({
+        url: "http://localhost:8080/app/api/v1/customers",
+        method: "GET",
+        dataType: "json",
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem("token")
+        },
+        success: function (resp) {
+            for (const customer of resp) {
+                let row=`<tr>
+                    <td>${customer.customerCode}</td>
+                    <td>${customer.customerName}</td>
+                    <td>${customer.gender}</td>
+                    <td>${customer.joinDate}</td>
+                    <td>${customer.level}</td>
+                    <td>${customer.totalPoint}</td>
+                    <td>${customer.dob}</td>
+                    <td>${customer.addressLine01+","+customer.addressLine02+","+customer.addressLine03+","+customer.addressLine04+","+customer.addressLine05+"."}</td>
+                    <td>${customer.contactNo}</td>
+                    <td>${customer.email}</td>
+                    <td>${customer.recentPurchaseDate}</td> 
+                </tr>`;
+                $("#tblCustomer").append(row);
+                bindCusTrEvents();
 
-    //get all customers
-    for (let i = 0; i < customerDB.length; i++) {
-        let id = customerDB[i].id;
-        let name = customerDB[i].name;
-        let age = customerDB[i].age;
-        let address = customerDB[i].address;
-        let salary = customerDB[i].salary;
+                const customerDetails = {
+                    id: customer.customerCode,
+                    /*customerName:customer.customerName,
+                    gender:customer.gender,
+                    joinDate:customer.joinDate,
+                    level:customer.level,
+                    totalPoint:customer.totalPoint,
+                    dob:customer.dob,
+                    contactNo:customer.contactNo,
+                    email:customer.email,
+                    recentPurchaseDate:customer.recentPurchaseDate*/
+                }
+                customerCodes.push(customerDetails);
+            }
+        }
+    });
+}
 
-        let row = `<tr>
-                     <td>${id}</td>
-                     <td>${name}</td>
-                     <td>${age}</td>
-                     <td>${address}</td>
-                     <td>${salary}</td>
-                    </tr>`;
+function bindCusTrEvents() {
+    $("#tblCustomer>tr").click(function () {
+        let code = $(this).children().eq(0).text();
+        let name = $(this).children().eq(1).text();
+        let gender = $(this).children().eq(2).text();
+        let joinDate = $(this).children().eq(3).text();
+        let level = $(this).children().eq(4).text();
+        let totalPoint = $(this).children().eq(5).text();
+        let dob = $(this).children().eq(6).text();
+        let address = $(this).children().eq(7).text();
+        let arr = address.split(",");
+        let addressLine01 = arr[0];
+        let addressLine02 = arr[1];
+        let addressLine03 = arr[2];
+        let addressLine04 = arr[3];
+        let addressLine05 = arr[4];
+        let contact = $(this).children().eq(8).text();
+        let email = $(this).children().eq(9).text();
+        let purchaseDate = $(this).children().eq(10).text();
 
-        // //and then append the row to tableBody
-        $("#tblCustomer").append(row);
-
-        //invoke this method every time
-        // we add a row // otherwise click
-        //event will not work
-        bindTrEvents();
-    }
+        $("#txtCustomerCode").val(code)
+        $("#txtCustomerName").val(name)
+        $("#txtJoinDate").val(joinDate)
+        $("#txtTotalPoint").val(totalPoint)
+        $("#txtDOB").val(dob)
+        $("#txtAddressLine01").val(addressLine01)
+        $("#txtAddressLine02").val(addressLine02)
+        $("#txtAddressLine03").val(addressLine03)
+        $("#txtAddressLine04").val(addressLine04)
+        $("#txtAddressLine05").val(addressLine05)
+        $("#txtContactNo").val(contact)
+        $("#txtEmail").val(email)
+        $("#txtPurchaseDate").val(purchaseDate)
+    });
 }
 
 function deleteCustomer(id) {
