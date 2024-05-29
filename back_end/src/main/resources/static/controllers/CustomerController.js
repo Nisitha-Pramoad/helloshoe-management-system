@@ -71,7 +71,60 @@ $("#btn-clear1").click(function () {
 
 // CRUD operation Functions
 function saveCustomer() {
+    let cusCode=$("#txtCustomerCode").val();
+    let cusName=$("#txtCustomerName").val();
+    let gender=$("#cusGender").val();
+    let joinDate=$("#txtJoinDate").val();
+    let level=$("#customerLevel").val();
+    let totalPoint=$("#txtTotalPoint").val();
+    let dob=$("#txtDOB").val();
+    let addressLine01=$("#txtAddressLine01").val();
+    let addressLine02=$("#txtAddressLine02").val();
+    let addressLine03=$("#txtAddressLine03").val();
+    let addressLine04=$("#txtAddressLine04").val();
+    let addressLine05=$("#txtAddressLine05").val();
+    let contact=$("#txtContactNo").val();
+    let email=$("#txtEmail").val();
+    let purchaseDate=$("#txtPurchaseDate").val();
 
+    let newCustomer = {
+        customerCode:cusCode,
+        customerName:cusName,
+        gender:gender,
+        joinDate:joinDate,
+        level:level,
+        totalPoint:totalPoint,
+        dob:dob,
+        addressLine01:addressLine01,
+        addressLine02:addressLine02,
+        addressLine03:addressLine03,
+        addressLine04:addressLine04,
+        addressLine05:addressLine05,
+        contactNo:contact,
+        email:email,
+        recentPurchaseDate:purchaseDate
+    };
+    const jsonObject=JSON.stringify(newCustomer);
+    $.ajax({
+        url:"http://localhost:8080/app/api/v1/customers",
+        method:"POST",
+        data:jsonObject,
+        contentType:("application/json"),
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem("token")
+        },
+
+        success: function (resp, textStatus, jqxhr){
+            console.log("Success",resp);
+            if (jqxhr.status == 201) {
+                alert("Added customer successfully");
+            }
+            getAllCustomers();
+        },
+        error: function (error){
+            console.log("Error",error);
+        }
+    });
 }
 
 function getAllCustomers() {
