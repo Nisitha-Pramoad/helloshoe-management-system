@@ -22,7 +22,10 @@ public class InventoryServiceImpl implements InventoryService {
 
     @Override
     public List<InventoryDTO> getAllInventory() {
-        return inventoryRepo.findAll().stream().map(inventory -> modelMapper.map(inventory, InventoryDTO.class)).toList();
+        return inventoryRepo.findAll()
+                .stream()
+                .map(inventory -> modelMapper
+                        .map(inventory, InventoryDTO.class)).toList();
     }
 
     @Override

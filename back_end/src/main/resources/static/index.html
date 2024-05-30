@@ -265,8 +265,8 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-danger" id="btnSaveCustomer">Save</button>
-                                        <button type="button" class="btn btn-warning" id="btnUpdate">Update</button>
-                                        <button type="button" class="btn btn-dark" id="btnCusDelete">Delete</button>
+                                        <button type="button" class="btn btn-warning" id="btnCustomerUpdate">Update</button>
+                                        <button type="button" class="btn btn-dark" id="btnCustomerDelete">Delete</button>
                                         <button type="button" class="btn btn-dark" id="btn-clear1">ClearALl</button>
                                         <button type="button" class="btn btn-warning"data-bs-dismiss="modal">Close</button>
                                     </div>
@@ -852,48 +852,117 @@
                                         <div class="container">
                                             <div class="row">
                                                 <div class="col custom-column">
-                                                    <label for="txtFirstName">Employee First Name:</label>
-                                                    <input class="form-control" id="txtFirstName" placeholder="Employee First Name">
+                                                    <label for="formFile" class="form-label">Add Image</label>
+                                                    <input class="form-control" type="file" id="formFile">
                                                 </div>
                                                 <div class="col custom-column">
-                                                    <label for="txtLastName">Employee Last Name:</label>
-                                                    <input class="form-control" id="txtLastName" placeholder="Employee Last Name">
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col custom-column">
-                                                    <label for="txtBirthday">Employee Birthday:</label>
-                                                    <input class="form-control" id="txtBirthday" placeholder="Employee Birthday">
-                                                </div>
-                                                <div class="col custom-column">
-                                                    <label for="txtEmployeeEmail">Employee Email:</label>
-                                                    <input class="form-control" id="txtEmployeeEmail" placeholder="Employee Email">
+                                                    <label for="txtEmployeeCode">Employee Code:</label>
+                                                    <input class="form-control" id="txtEmployeeCode">
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col custom-column">
-                                                    <label for="txtEmployeeAddress">Employee Address:</label>
-                                                    <input class="form-control" id="txtEmployeeAddress" placeholder="Employee Address">
+                                                    <label for="txtEmployeeName">Employee Name:</label>
+                                                    <input class="form-control" id="txtEmployeeName" >
                                                 </div>
                                                 <div class="col custom-column">
-                                                    <label for="txtEmployeePhoneNumber">Employee Phone Number:</label>
-                                                    <input class="form-control" id="txtEmployeePhoneNumber" placeholder="Employee Phone Number">
+                                                    <label for="employeeGender">Employee Gender:</label>
+                                                    <select class="form-select" aria-label="Default select example" id="employeeGender">
+                                                        <option selected>Select</option>
+                                                        <option value="1">MALE</option>
+                                                        <option value="2">FEMALE</option>
+                                                    </select>
                                                 </div>
                                             </div>
+
                                             <div class="row">
                                                 <div class="col custom-column">
-                                                    <label for="cmbStaffRole">Role:</label>
-                                                    <select class="form-select" aria-label="Default select example" id="cmbStaffRole">
+                                                    <label for="formFile" class="form-label">Status</label>
+                                                    <input class="form-control" id="txtEmployeeStatus" >
+                                                </div>
+                                                <div class="col custom-column">
+                                                    <label for="txtEmployeeCode">Designation:</label>
+                                                    <input class="form-control" id="txtEmployeeDesignation">
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col custom-column">
+                                                    <label for="txtEmployeeAccessRole">Access Role:</label>
+                                                    <select class="form-select" aria-label="Default select example" id="txtEmployeeAccessRole">
                                                         <option selected>Select</option>
                                                         <option value="1">Staff</option>
                                                         <option value="2">Admin</option>
                                                     </select>
                                                 </div>
                                                 <div class="col custom-column">
-                                                    <label for="txtPinNumber">Pin Number:</label>
-                                                    <input class="form-control" id="txtPinNumber" placeholder="Pin Number">
+                                                    <label for="txtEmployeeDateOfJoin">Date of Join:</label>
+                                                    <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="txtEmployeeDateOfJoin">
                                                 </div>
                                             </div>
+
+                                            <div class="row">
+                                                <div class="col custom-column">
+                                                    <label for="txtEmployeeAttachedBranch">Attached Branch:</label>
+                                                    <input class="form-control" id="txtEmployeeAttachedBranch">
+                                                </div>
+                                                <div class="col custom-column">
+                                                    <label for="txtEmployeeDOB">DOB:</label>
+                                                    <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="txtEmployeeDOB">
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col custom-column">
+                                                    <label for="txtEmployeeAddressLine1">Address Line 01:</label>
+                                                    <input class="form-control" id="txtEmployeeAddressLine1">
+                                                </div>
+                                                <div class="col custom-column">
+                                                    <label for="txtEmployeeAddressLine2">Address Line 02:</label>
+                                                    <input class="form-control" id="txtEmployeeAddressLine2">
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col custom-column">
+                                                    <label for="txtEmployeeAddressLine3">Address Line 03:</label>
+                                                    <input class="form-control" id="txtEmployeeAddressLine3">
+                                                </div>
+                                                <div class="col custom-column">
+                                                    <label for="txtEmployeeAddressLine4">Address Line 04:</label>
+                                                    <input class="form-control" id="txtEmployeeAddressLine4">
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col custom-column">
+                                                    <label for="txtEmployeeAddressLine5">Address Line 05:</label>
+                                                    <input class="form-control" id="txtEmployeeAddressLine5">
+                                                </div>
+                                                <div class="col custom-column">
+                                                    <label for="txtEmployeeContactNo">Contact No:</label>
+                                                    <input class="form-control" id="txtEmployeeContactNo">
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col custom-column">
+                                                    <label for="txtEmployeeEmail">Email:</label>
+                                                    <input class="form-control" id="txtEmployeeEmail">
+                                                </div>
+                                                <div class="col custom-column">
+                                                    <label for="txtEmployeeCaseOfEmergency">Inform in case of emergency:</label>
+                                                    <input class="form-control" id="txtEmployeeCaseOfEmergency">
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col custom-column">
+                                                    <label for="txtEmployeeEmergencyContact">Emergency Contact:</label>
+                                                    <input class="form-control" id="txtEmployeeEmergencyContact">
+                                                </div>
+                                            </div>
+
                                         </div>
 
 
@@ -902,9 +971,9 @@
 
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-success" id="btnEmployeSave">Save</button>
-                                <button type="button" class="btn btn-success" id="btnEmployeUpdate">Update</button>
-                                <button type="button" class="btn btn-success" id="btnEmployeDelete">Delete</button>
+                                <button type="button" class="btn btn-success" id="btnEmployeeSave">Save</button>
+                                <button type="button" class="btn btn-success" id="btnEmployeeUpdate">Update</button>
+                                <button type="button" class="btn btn-success" id="btnEmployeeDelete">Delete</button>
                                 <button type="button" class="btn btn-success" id="btn-clear-employe-form">ClearALl</button>
                             </div>
                         </div>
@@ -1048,6 +1117,7 @@
 <script src="controllers/CustomerController.js"></script>
 <script src="controllers/ItemController.js"></script>
 <script src="controllers/PlaceOrderController.js"></script>
+<script src="controllers/EmployeeController.js"></script>
 
 <script src="controllers/validations/CustomerValidations.js"></script>
 <script src="controllers/validations/ItemValidations.js"></script>

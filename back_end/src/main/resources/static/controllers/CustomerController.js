@@ -16,46 +16,117 @@ $("#btnSaveCustomer").click(function (){
     clearCustomerInputField();
 });
 
+$("#btnCustomerUpdate").click(function (){
+    updateCustomer();
+    clearCustomerInputField();
+});
+
+$("#btnCustomerDelete").click(function (){
+    deleteCustomer();
+    clearCustomerInputField();
+});
+
 //get all customer event
 $("#btnGetAll").click(function () {
     getAllCustomers();
 });
 
 //bind tr events for getting back data of the rows to text fields
-function bindTrEvents() {
-    $('#tblCustomer>tr').click(function () {
-        //get the selected rows data
-        let id = $(this).children().eq(0).text();
-        let name = $(this).children().eq(1).text();
-        let age = $(this).children().eq(2).text();
-        let address = $(this).children().eq(3).text();
-        let salary = $(this).children().eq(4).text();
-
-        //set the selected rows data to the input fields
-        $("#txtCustomerID").val(id);
-        $("#txtCustomerName").val(name);
-        $("#txtCustomerAge").val(age);
-        $("#txtCustomerAddress").val(address);
-        $("#txtCustomerSalary").val(salary);
-    })
-}
+// function bindTrEvents() {
+//     $('#tblCustomer>tr').click(function () {
+//         //get the selected rows data
+//         let id = $(this).children().eq(0).text();
+//         let name = $(this).children().eq(1).text();
+//         let age = $(this).children().eq(2).text();
+//         let address = $(this).children().eq(3).text();
+//         let salary = $(this).children().eq(4).text();
+//
+//         //set the selected rows data to the input fields
+//         $("#txtCustomerID").val(id);
+//         $("#txtCustomerName").val(name);
+//         $("#txtCustomerAge").val(age);
+//         $("#txtCustomerAddress").val(address);
+//         $("#txtCustomerSalary").val(salary);
+//     })
+// }
 
 //delete btn event
-$("#btnCusDelete").click(function () {
-    let id = $("#txtCustomerID").val();
-
-    let consent = confirm("Do you want to delete.?");
-    if (consent) {
-        let response = deleteCustomer(id);
-        if (response) {
-            alert("Customer Deleted");
-            clearCustomerInputFields();
+function deleteCustomer(){
+    let cusCode=$("#txtCustomerCode").val();
+    $.ajax({
+        url: "http://localhost:8080/app/api/v1/customers/"+ cusCode,
+        method: "DELETE",
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem("token")
+        },
+        success: function (resp, textStatus, jqxhr) {
+            if (jqxhr.status == 201) {
+                alert("Delete customer successfully");
+            }
             getAllCustomers();
-        } else {
-            alert("Customer Not Removed..!");
+        },
+        error: function (error) {
+
         }
-    }
-});
+    });
+}
+
+function updateCustomer(){
+    let cusCode=$("#txtCustomerCode").val();
+    let cusName=$("#txtCustomerName").val();
+    let gender=$("#cusGender").val();
+    let joinDate=$("#txtJoinDate").val();
+    let level=$("#customerLevel").val();
+    let totalPoint=$("#txtTotalPoint").val();
+    let dob=$("#txtDOB").val();
+    let addressLine01=$("#txtAddressLine01").val();
+    let addressLine02=$("#txtAddressLine02").val();
+    let addressLine03=$("#txtAddressLine03").val();
+    let addressLine04=$("#txtAddressLine04").val();
+    let addressLine05=$("#txtAddressLine05").val();
+    let contact=$("#txtContactNo").val();
+    let email=$("#txtEmail").val();
+    let purchaseDate=$("#txtPurchaseDate").val();
+
+    let newCustomer = {
+        customerCode:cusCode,
+        customerName:cusName,
+        gender:gender,
+        joinDate:joinDate,
+        level:level,
+        totalPoint:totalPoint,
+        dob:dob,
+        addressLine01:addressLine01,
+        addressLine02:addressLine02,
+        addressLine03:addressLine03,
+        addressLine04:addressLine04,
+        addressLine05:addressLine05,
+        contactNo:contact,
+        email:email,
+        recentPurchaseDate:purchaseDate
+    };
+    const jsonObject=JSON.stringify(newCustomer);
+    $.ajax({
+        url:"http://localhost:8080/app/api/v1/customers",
+        method:"PATCH",
+        data:jsonObject,
+        contentType:("application/json"),
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem("token")
+        },
+
+        success: function (resp, textStatus, jqxhr){
+            console.log("Success",resp);
+            if (jqxhr.status == 201) {
+                alert("Added customer successfully");
+            }
+            getAllCustomers();
+        },
+        error: function (error){
+            console.log("Error",error);
+        }
+    });
+}
 
 //update  btn event
 $("#btnUpdate").click(function () {
@@ -208,23 +279,19 @@ function bindCusTrEvents() {
     });
 }
 
-function deleteCustomer(id) {
-    for (let i = 0; i < customerDB.length; i++) {
-        if (customerDB[i].id == id) {
-            customerDB.splice(i, 1);
-            return true;
-        }
-    }
-    return false;
-}
+// function searchCustomer(id) {
+//     return customerDB.find(function (customer) {
+//         //if the search id match with customer record
+//         //then return that object
+//         return customer.id == id;
+//     });
+// }
 
-function searchCustomer(id) {
-    return customerDB.find(function (customer) {
-        //if the search id match with customer record
-        //then return that object
-        return customer.id == id;
+function searchCustomer(id){
+    return customerCodes.find(function (customer){
+        return customer.id==id;
     });
-}
+};
 
 function updateCustomer(id) {
     if (searchCustomer(id) == undefined) {
@@ -252,7 +319,9 @@ function updateCustomer(id) {
 
 
 $("#btnSearchCus").click(function () {
-    var result = customerDB.find(({id}) => id === $("#searchCusId").val());
+    //var result = customerDB.find(({id}) => id === $("#searchCusId").val());
+    var result = searchCustomer(({id}) => id === $("#searchCusId").val());
+
     clearSearchCustomerFields();
     console.log(result);
 
