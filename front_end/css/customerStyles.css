@@ -1,0 +1,125 @@
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding-right: 30px;
+}
+
+.custom-navbar-brand {
+    color: #5c9404;
+}
+
+.custom-btn-search {
+    background-color: #5c9404;
+    border-color: #5c9404;
+    color: #fff; /* Text color for the button */
+}
+
+.custom-btn-search:hover {
+    background-color: #387e01; /* Color on hover */
+    border-color: #387e01;
+    color: #fff; /* Text color on hover */
+}
+
+.spacing_bet {
+    padding: 2% 4%;
+}
+
+.nav-link {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.btn_group_spacing {
+    margin-top: 1%;
+    margin-left: 1%;
+}
+
+.input_field_spacing {
+    margin-bottom: 2.5%;
+    margin-top: 1.5%;
+}
+
+.title_name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.modal-header {
+    background-color: #5c9404;
+    color: white;
+}
+
+.btn-close {
+    background-color: white;
+}
+
+.modal-body {
+    font-weight: bold;
+}
+
+.form-row .form-group {
+    padding: 1,5rem;
+    margin-bottom: 10px;
+}
+
+.custom-table-color {
+    color: #5c9404;
+}
+
+#custom-spacing-adding-for-add-new-button{
+    margin-bottom: 0.5%;
+    margin-top: 2.5%;
+}
+
+#btnAddItem{
+    color: white;
+    background-color: #49525d;
+}
+
+.custom-column {
+    margin-top: 10px; /* Adjust as needed */
+    margin-bottom: 10px; /* Adjust as needed */
+}
+
+.staff-buttons {
+    color: white;
+    background-color: #49525d;
+}
+
+/*welcome page*/
+#welcome-page {
+    margin-top: 80px; /* Add margin to the whole section */
+}
+
+.welcome-text {
+    text-align: center; /* Align text content to the center */
+    margin-top: 25%;
+}
+
+
+.image-container {
+    margin-top: 20px; /* Add margin at the top of the image */
+}
+
+.image-container img {
+    border-radius: 10px; /* Adjust the value as needed to control the roundness of the corners */
+}
+
+.img-fluid {
+    max-width: 100%; /* Reduce image size to fit container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+
+#custom-spacing-adding-for-purchase-button {
+    margin-bottom: 2.5%;
+    margin-top: 8.0%;
+}
+
+#custom-spacing-adding-for-span-text {
+    margin-bottom: 9.5%;
+}
+
+.custom-spacing-adding-for-customer-details-card {
+    margin-bottom: 1.5%;
+}
