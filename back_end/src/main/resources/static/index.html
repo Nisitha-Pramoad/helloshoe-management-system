@@ -576,40 +576,39 @@
             <section id="itemSelectForm">
                 <div>
                     <img  alt="itemPic" id="itemPicForDetailForm">
-                    <label id="itemCodeForDetailForm"></label>
+                    <label class="fw-bold" id="itemCodeForDetailForm"> </label>
                     <label id="itemNameForDetailForm"></label>
                     <label id="itemStatusForDetailForm"></label>
                     <label id="itemPriceForDetailForm"></label>
                 </div>
-                <div>
+                <div class="p-2">
                     <label>Sizes</label>
                     <div>
-                        <button id="btnSize5" style="background-color: #0a212d">5</button>
-                        <button id="btnSize6" style="background-color: #0a212d">6</button>
-                        <button id="btnSize7" style="background-color: #0a212d">7</button>
-                        <button id="btnSize8" style="background-color: #0a212d">8</button>
-                        <button id="btnSize9" style="background-color: #0a212d">9</button>
-                        <button id="btnSize10" style="background-color: #0a212d">10</button>
-                        <button id="btnSize11" style="background-color: #0a212d">11</button>
+                        <button id="btnSize5" style="background-color: #5c9404">5</button>
+                        <button id="btnSize6" style="background-color: #5c9404">6</button>
+                        <button id="btnSize7" style="background-color: #5c9404">7</button>
+                        <button id="btnSize8" style="background-color: #5c9404">8</button>
+                        <button id="btnSize9" style="background-color: #5c9404">9</button>
+                        <button id="btnSize10" style="background-color: #5c9404">10</button>
+                        <button id="btnSize11" style="background-color: #5c9404">11</button>
                     </div>
                     <label id="lblSizeStock"></label>
                     <label id="lblSizeQuantity"></label>
-                    <label > Size :</label>
                     <label id="lblSizeOfItem"></label>
 
                     <div>
                         <label for="txtGetQuantity">Quantity : </label>
-                        <input type="text" id="txtGetQuantity" >
+                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="txtGetQuantity">
                     </div>
-                    <button id="btnBackToSale">Back</button>
-                    <button id="btnAddToCart">Add</button>
+                    <button class="btn btn-secondary mt-3 " id="btnBackToSale">Back</button>
+                    <button class="btn btn-success mt-3 " id="btnAddToCart">Add</button>
                 </div>
             </section>
             <section>
                 <div>
-                    <button type="button" class="btn btn-outline-primary" id="btnToPurchaseForm">Purchase</button>
-                    <button type="button" class="btn btn-outline-secondary"  id="btnToRefundForm">Refund</button>
-                    <button type="button" class="btn btn-outline-success" id="btnToSalesForm">Sales</button>
+                    <button class="btn purchase-btn-custom-button" id="btnToPurchaseForm">Purchase</button>
+                    <button class="btn purchase-btn-custom-button"  id="btnToRefundForm">Refund</button>
+                    <button class="btn purchase-btn-custom-button" id="btnToSalesForm">Sales</button>
                 </div>
                 <div id="purchaseForm">
                     <div>
@@ -631,7 +630,7 @@
                     </div>
                     <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-8 col-sm-10 col-10 shadow-lg p-3 mb-5 bg-body-tertiary rounded">
                         <div class="card h-100">
-                            <div class="card-header bg-primary">
+                            <div class="div-purchase-bg-color">
                                 <button type="button" class="btn btn-success mt-4" id="btnCashPayment">Cash</button>
                                 <button type="button" class="btn btn-success mt-4" id="btnCardPayment">Card</button>
                             </div>
@@ -640,10 +639,10 @@
                                     <div class="col-12">
                                         <div class="row">
                                             <div class="col-12">
-                                                <span  style="color: #3d98ef;font-size: 13px;">Total : </span>
+                                                <span  style="color: #013220 ;font-size: 13px;">Total : </span>
                                             </div>
                                             <div class="col-12">
-                                                <span id="txtTotal" style="font-size: 30px;color: #3d98ef;">0</span> Rs/=
+                                                <span id="txtTotal" style="font-size: 30px;color: #013220 ;">0</span> Rs/=
                                             </div>
                                         </div>
 
@@ -651,10 +650,10 @@
                                     <div class="col-12">
                                         <div class="row">
                                             <div class="col-12">
-                                                <span  style="color: #ef5350;font-size: 13px;">SubTotal : </span>
+                                                <span  style="color: #013220 ;font-size: 13px;">SubTotal : </span>
                                             </div>
                                             <div class="col-12">
-                                                <span id="txtSubtotal" style="color: #ef5350;font-size: 30px;">0</span> Rs/=
+                                                <span id="txtSubtotal" style="color: #013220 ;font-size: 30px;">0</span> Rs/=
                                             </div>
                                         </div>
                                     </div>
@@ -677,6 +676,7 @@
                                             </div>
                                         </div>
                                     </div>
+
                                     <div class="mb-3">
                                         <label for="txtBalance" class="form-label">Balance</label>
                                         <input type="text" class="form-control" id="txtBalance" placeholder="Balance">
@@ -708,9 +708,9 @@
                         </form>
                     </div>
                     <div>
-                        <button type="button" class="btn btn-outline-primary"  id="btnBackFromPurchase">Back</button>
-                        <button type="button" class="btn btn-outline-primary" id="btnPurchase">Purchase</button>
-                        <button type="button" class="btn btn-outline-primary" id="btnClearPurchase">Clear</button>
+                        <button type="button" class="btn btn-outline-success"  id="btnBackFromPurchase">Back</button>
+                        <button type="button" class="btn btn-outline-success" id="btnPurchase">Purchase</button>
+                        <button type="button" class="btn btn-outline-success" id="btnClearPurchase">Clear</button>
                     </div>
                     <div>
                         <label class="form-label">Order ID :</label>
@@ -753,77 +753,6 @@
                 </div>
             </section>
         </section>
-        <section id="admin">
-            <div>
-                <div class="card" style="width: 18rem;">
-                    <div class="card-body">
-                        <label>Today's sales</label>
-                        <label>Rs 25000</label>
-                    </div>
-                </div>
-                <div class="card" style="width: 18rem;">
-                    <div class="card-body">
-                        <label>Today's Profit</label>
-                        <label>Rs 25000</label>
-                    </div>
-                </div>
-                <div class="card" style="width: 18rem;">
-                    <div class="card-body">
-                        <label>Most sale item</label>
-                        <label>Adidas</label>
-                    </div>
-                </div>
-                <div class="card" style="width: 18rem;">
-                    <div class="card-body">
-                        <label>Customers</label>
-                        <label>100</label>
-                    </div>
-                </div>
-                <div class="card" style="width: 18rem;">
-                    <div class="card-body">
-                        <label>Total items</label>
-                        <label>100</label>
-                    </div>
-                </div>
-            </div>
-            <div class="card" >
-                <img  class="card-img-top" alt="..." id="imgMostSellItem">
-                <div class="card-body">
-                    <label id="lblMostSellItemCode"></label>
-                    <label id="lblMostSellItemName"></label>
-                    <label id="lblMostSellItemStatus"></label>
-                    <label id="lblMostSellItemPrice"></label>
-                </div>
-            </div>
-            <div class="card" >
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-            <div class="card" >
-                <table class="table table-hover">
-                    <thead >
-                    <tr style="border: black">
-                        <th scope="col" >Item Code</th>
-                        <th scope="col" >Item Desc</th>
-                        <th scope="col" >Size</th>
-                        <th scope="col" >Price</th>
-                        <th scope="col" >Quantity</th>
-                        <th scope="col" >Total</th>
-                    </tr>
-                    </thead>
-                    <tbody class="table-group-divider"  style="border: black">
-
-                    </tbody>
-                </table>
-            </div>
-
-        </section>
-
-    <!--Sales Content End-->
 
 </main>
 

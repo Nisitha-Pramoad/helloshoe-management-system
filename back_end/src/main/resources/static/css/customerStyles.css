@@ -8,6 +8,15 @@
     color: #5c9404;
 }
 
+.purchase-btn-custom-button {
+    background-color: #5c9404;
+    border-color: #5c9404;
+}
+
+.div-purchase-bg-color {
+    background-color: #49525d;
+}
+
 .custom-btn-search {
     background-color: #5c9404;
     border-color: #5c9404;
@@ -124,11 +133,11 @@
     margin-bottom: 1.5%;
 }
 
-/* Style for the sales section container */
+/* Style for the sales section container.............. */
 body > main > section#sale > section:first-child {
     width: 90vw;
     height: 75vh;
-    border: red solid 1px;
+    border: #49525d 1px solid;
     position: absolute;
     top: 20%;
     left: 5%;
@@ -170,23 +179,22 @@ body > main > section#sale > section:first-child > div > label:nth-child(3) {
     font-weight: lighter;
 }
 
-/* Style for add to cart button */
+/* Style for add to cart button...................... */
 body > main > section#sale > section:first-child > div > button {
     width: 50px;
     position: absolute;
     right: 20px;
     bottom: 15px;
-    background: red;
+    background: #5c9404;
     border-radius: 10px;
 }
 
 /* Style for item hover effect */
 body > main > section#sale > section:first-child > div:hover {
-    background: #ff1210;
+    background: #5c9404;
     opacity: 50%;
-    border: red solid 1px;
+    border: black 1px;
     position: relative;
-    cursor: cell;
 }
 
 /* Style for hidden labels */
@@ -315,7 +323,7 @@ body > main > section#sale > section:nth-child(3) > div:nth-child(1) > button {
 body > main > section#sale > section:nth-child(3) > div:nth-child(2) {
     width: 90vw;
     height: 75vh;
-    border: red solid 1px;
+    border: black solid 1px;
     background: #ffffff;
     position: absolute;
     top: 20%;
