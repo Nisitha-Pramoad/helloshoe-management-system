@@ -18,7 +18,7 @@ function saveLastView(clickedID) {
         case "itemContent":
             localStorage.setItem("view", "ITEM");
             break;
-        case "orderContent":
+        case "sales":
             localStorage.setItem("view", "ORDER");
             break;
         case "orderDetailContent":
@@ -49,7 +49,7 @@ function setTheLastView() {
             setView($("#customerContent"));
             break;
         case "ORDER":
-            setView($("#orderContent"));
+            setView($("#sales"));
             break;
         case "ORDERDETAILS":
             setView($("#orderDetailsContent"));
@@ -69,7 +69,7 @@ function setTheLastView() {
 }
 
 function clearAll() {
-    $("#dashboardContent,#customerContent,#itemContent,#orderContent,#orderDetailsContent,#staffContent,#suppliersContent,#salesContent").css('display', 'none');
+    $("#dashboardContent,#customerContent,#itemContent,#sales,#orderDetailsContent,#staffContent,#suppliersContent,#salesContent").css('display', 'none');
 }
 
 function setView(viewOb) {
@@ -93,7 +93,7 @@ $("#lnkItem").click(function () {
 });
 
 $("#lnkOrders").click(function () {
-    setView($("#orderContent"));
+    setView($("#sales"));
 });
 
 $("#lnkOrderDetails").click(function () {

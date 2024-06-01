@@ -22,10 +22,7 @@ public class InventoryServiceImpl implements InventoryService {
 
     @Override
     public List<InventoryDTO> getAllInventory() {
-        return inventoryRepo.findAll()
-                .stream()
-                .map(inventory -> modelMapper
-                        .map(inventory, InventoryDTO.class)).toList();
+        return inventoryRepo.findAll().stream().map(inventory -> modelMapper.map(inventory, InventoryDTO.class)).toList();
     }
 
     @Override
@@ -47,5 +44,21 @@ public class InventoryServiceImpl implements InventoryService {
     public void deleteInventory(String id) {
         inventoryRepo.deleteById(id);
     }
+
+    @Override
+    public List<InventoryDTO> getAllDetailsUseGender(String gender) {
+        return inventoryRepo.findByTypeOfGenderContaining(gender).stream().map(inventory -> modelMapper.map(inventory, InventoryDTO.class)).toList();
+    }
+
+    @Override
+    public List<InventoryDTO> getAllItemsByPrice(double minPrice, double maxPrice) {
+        return inventoryRepo.findByUnitPriceSaleBetween(minPrice,maxPrice).stream().map(inventory -> modelMapper.map(inventory, InventoryDTO.class)).toList();
+    }
+
+    @Override
+    public List<InventoryDTO> getAllItemsByPriceAndTypeOfGender(double minPrice, double maxPrice,String gender) {
+        return inventoryRepo.findByUnitPriceSaleBetweenAndTypeOfGenderContaining(minPrice,maxPrice,gender).stream().map(inventory -> modelMapper.map(inventory, InventoryDTO.class)).toList();
+    }
+
 
 }

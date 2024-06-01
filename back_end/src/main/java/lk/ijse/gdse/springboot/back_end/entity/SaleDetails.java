@@ -15,17 +15,21 @@ public class SaleDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int no;
-
-    @ManyToOne
-    @JoinColumn(name = "orderNo",referencedColumnName = "orderNo",insertable = false,updatable = false)
-    private Sale orderNo;
-
-    @ManyToOne
-    @JoinColumn(name = "itemCode",referencedColumnName = "itemCode",insertable = false,updatable = false)
-    private Inventory itemCode;
     private String itemDesc;
     private int size;
     private int quantity;
     private double unitPrice;
+
+    @ManyToOne()
+    @JoinColumn(name = "orderNo",referencedColumnName = "orderNo",
+            insertable = true,
+            updatable = true)
+    private Sale order;
+
+    @ManyToOne
+    @JoinColumn(name = "itemCode",referencedColumnName = "itemCode",
+            insertable = true,
+            updatable = true)
+    private Inventory item;
 
 }

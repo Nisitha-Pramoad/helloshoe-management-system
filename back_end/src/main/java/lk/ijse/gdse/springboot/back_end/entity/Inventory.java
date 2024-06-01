@@ -5,6 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -17,6 +20,7 @@ public class Inventory {
     private String itemDesc;
     @Column(columnDefinition = "LONGTEXT")
     private String itemPicture;
+    private String typeOfGender;
     private String category;
     private int quantitySize5;
     private int quantitySize6;
@@ -34,6 +38,9 @@ public class Inventory {
     private double expectedProfit;
     private double profitMargin;
     private String status;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy =  "item")
+    private List<SaleDetails> saleDetails = new ArrayList<>();
 
 
 }

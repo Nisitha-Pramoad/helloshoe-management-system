@@ -383,34 +383,142 @@
                                     <div class="modal-body">
                                         <form>
                                             <div class="form-row">
-                                                <div class="form-group">
-                                                    <label for="txtItemId">Item ID:</label>
-                                                    <input class="form-control" id="txtItemId"
-                                                           placeholder="I00-001">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="txtItemDescription">Item Name:</label>
-                                                    <input class="form-control" id="txtItemDescription"
-                                                           placeholder="Sunlight">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="txtItemQuantity">Item Quantity:</label>
-                                                    <input class="form-control" id="txtItemQuantity"
-                                                           placeholder="2">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="txtItemPrice">Item Price:</label>
-                                                    <input class="form-control" id="txtItemPrice"
-                                                           placeholder="60.00">
-                                                </div>
+
+                                                <div class="container">
+
+                                                    <div class="row">
+                                                        <div class="col custom-column">
+                                                            <label for="formFile" class="form-label">Add Image</label>
+                                                            <input class="form-control" type="file" id="itemPicture">
+
+                                                        </div>
+                                                        <div class="col custom-column">
+                                                            <label for="txtItemCode">Item code:</label>
+                                                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="txtItemCode">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col custom-column">
+                                                            <label for="txtItemCode">Item Decs:</label>
+                                                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="txtItemDec">
+                                                        </div>
+                                                        <div class="col custom-column">
+                                                            <label for="txtItemCode">Gender:</label>
+                                                            <select class="form-select form-select-sm" aria-label="Small select example" id="cmdItemCategory">
+                                                                <option>Formal Shoes</option>
+                                                                <option>Casual Shoes</option>
+                                                                <option>Industrial Shoes</option>
+                                                                <option>Sport Shoes</option>
+                                                                <option>Heel</option>
+                                                                <option>Flats</option>
+                                                                <option>Wedges</option>
+                                                                <option>Flip Flops</option>
+                                                                <option>Sandals</option>
+                                                                <option>Slippers</option>
+                                                                <option>Shoe shampoo</option>
+                                                                <option>POLB, POLBR, POLDBR</option>
+                                                                <option>Full-socks</option>
+                                                                <option>Half-socks</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="row">
+                                                        <div class="col custom-column">
+                                                            <label for="txtSupplierCodeForItem">Supplier Code</label>
+                                                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="txtSupplierCodeForItem">
+                                                        </div>
+                                                        <div class="col custom-column">
+                                                            <label for="txtItemCode">Supplier Name:</label>
+                                                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="txtSupplierNameForItem">
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="row">
+                                                        <div class="col custom-column">
+                                                            <label for="txtSupplierCodeForItem">Unit price:</label>
+                                                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="txtUnitPriceSale">
+                                                        </div>
+                                                        <div class="col custom-column">
+                                                            <label for="txtItemCode">Unit price:</label>
+                                                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="txtUnitPriceBuy">
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="row">
+                                                        <div class="col custom-column">
+                                                            <label for="txtSupplierCodeForItem">Size 5:</label>
+                                                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="txtSize5Qty">
+                                                        </div>
+                                                        <div class="col custom-column">
+                                                            <label for="txtItemCode">Size 6:</label>
+                                                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="txtSize6Qty">
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="row">
+                                                        <div class="col custom-column">
+                                                            <label for="txtSupplierCodeForItem">Size 7:</label>
+                                                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="txtSize7Qty">
+                                                        </div>
+                                                        <div class="col custom-column">
+                                                            <label for="txtItemCode">Size 8:</label>
+                                                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="txtSize8Qty">
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="row">
+                                                        <div class="col custom-column">
+                                                            <label for="txtSupplierCodeForItem">Size 9:</label>
+                                                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="txtSize9Qty">
+                                                        </div>
+                                                        <div class="col custom-column">
+                                                            <label for="txtItemCode">Size 10:</label>
+                                                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="txtSize10Qty">
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="row">
+                                                        <div class="col custom-column">
+                                                            <label for="txtSupplierCodeForItem">Size 11:</label>
+                                                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="txtSize11Qty">
+                                                        </div>
+                                                        <div class="col custom-column">
+                                                            <label for="txtItemCode">Expected Profit:</label>
+                                                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="txtItemExpectedProfit">
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="row">
+                                                        <div class="col custom-column">
+                                                            <label for="txtSupplierCodeForItem">Profit margin:</label>
+                                                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="txtItemProfitMargin">
+                                                        </div>
+                                                        <div class="col custom-column">
+                                                            <label for="txtItemCode">Status:</label>
+                                                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="txtItemStatus">
+                                                        </div>
+                                                    </div>
+
+
+
+
                                             </div>
                                         </form>
 
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-danger" id="btnItemSave">Save</button>
-                                        <button type="button" class="btn btn-warning" id="btnItemUpdate">Update</button>
-                                        <button type="button" class="btn btn-dark" id="btnItemDelete">Delete</button>
+                                        <button type="button" class="btn btn-danger" id="btnInventorySave">Save</button>
+                                        <button type="button" class="btn btn-warning" id="btnInventoryUpdate">Update</button>
+                                        <button type="button" class="btn btn-dark" id="btnInventoryDelete">Delete</button>
                                         <button type="button" class="btn btn-dark" id="btnItemclear">ClearALl</button>
                                         <button type="button" class="btn btn-warning"data-bs-dismiss="modal">Close</button>
                                     </div>
@@ -431,13 +539,27 @@
         <table class="table">
             <thead class="custom-table-color">
             <tr>
-                <th scope="col">Product Id</th>
-                <th scope="col">Description</th>
-                <th scope="col">Quantity</th>
-                <th scope="col">Price</th>
+                <th scope="col">Code</th>
+                <th scope="col"></th>
+                <th scope="col">Name</th>
+                <th scope="col">Category</th>
+                <th scope="col">Size5</th>
+                <th scope="col">Size6</th>
+                <th scope="col">Size7</th>
+                <th scope="col">Size8</th>
+                <th scope="col">Size9</th>
+                <th scope="col">Size10</th>
+                <th scope="col">Size11</th>
+                <th scope="col">Supplier Code</th>
+                <th scope="col">Supplier name</th>
+                <th scope="col">price-Sale</th>
+                <th scope="col">price-Buy</th>
+                <th scope="col">Expected Profit</th>
+                <th scope="col">Profit margin</th>
+                <th scope="col">Status</th>
             </tr>
             </thead>
-            <tbody id="tblItem">
+            <tbody id="tblInventories">
 
             </tbody>
         </table>
@@ -446,198 +568,263 @@
 </main>
 
 <!-- start ordering section  -->
-<main class="container-fluid " id="orderContent">
-    <section id="search_form_and_two_button">
+<main class="container-fluid " id="sales">
 
-        <div class="container-fluid spacing_bet">
+        <section id="sale">
+            <section id="itemDetails">
+            </section>
+            <section id="itemSelectForm">
+                <div>
+                    <img  alt="itemPic" id="itemPicForDetailForm">
+                    <label id="itemCodeForDetailForm"></label>
+                    <label id="itemNameForDetailForm"></label>
+                    <label id="itemStatusForDetailForm"></label>
+                    <label id="itemPriceForDetailForm"></label>
+                </div>
+                <div>
+                    <label>Sizes</label>
+                    <div>
+                        <button id="btnSize5" style="background-color: #0a212d">5</button>
+                        <button id="btnSize6" style="background-color: #0a212d">6</button>
+                        <button id="btnSize7" style="background-color: #0a212d">7</button>
+                        <button id="btnSize8" style="background-color: #0a212d">8</button>
+                        <button id="btnSize9" style="background-color: #0a212d">9</button>
+                        <button id="btnSize10" style="background-color: #0a212d">10</button>
+                        <button id="btnSize11" style="background-color: #0a212d">11</button>
+                    </div>
+                    <label id="lblSizeStock"></label>
+                    <label id="lblSizeQuantity"></label>
+                    <label > Size :</label>
+                    <label id="lblSizeOfItem"></label>
 
-            <div class="row">
-                <div class="feature-box col-lg-4">
+                    <div>
+                        <label for="txtGetQuantity">Quantity : </label>
+                        <input type="text" id="txtGetQuantity" >
+                    </div>
+                    <button id="btnBackToSale">Back</button>
+                    <button id="btnAddToCart">Add</button>
+                </div>
+            </section>
+            <section>
+                <div>
+                    <button type="button" class="btn btn-outline-primary" id="btnToPurchaseForm">Purchase</button>
+                    <button type="button" class="btn btn-outline-secondary"  id="btnToRefundForm">Refund</button>
+                    <button type="button" class="btn btn-outline-success" id="btnToSalesForm">Sales</button>
+                </div>
+                <div id="purchaseForm">
+                    <div>
+                        <table class="table table-hover">
+                            <thead >
+                            <tr style="border: black">
+                                <th scope="col" >Item Code</th>
+                                <th scope="col" >Item Desc</th>
+                                <th scope="col" >Size</th>
+                                <th scope="col" >Price</th>
+                                <th scope="col" >Quantity</th>
+                                <th scope="col" >Total</th>
+                            </tr>
+                            </thead>
+                            <tbody class="table-group-divider" id="tblPurchase" style="border: black">
 
-                    <div class="card">
-                        <h5 class="card-header card_custom_header">Customer Details</h5>
-                        <div class="card-body">
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-8 col-sm-10 col-10 shadow-lg p-3 mb-5 bg-body-tertiary rounded">
+                        <div class="card h-100">
+                            <div class="card-header bg-primary">
+                                <button type="button" class="btn btn-success mt-4" id="btnCashPayment">Cash</button>
+                                <button type="button" class="btn btn-success mt-4" id="btnCardPayment">Card</button>
+                            </div>
+                            <div class="card-body">
+                                <form>
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <span  style="color: #3d98ef;font-size: 13px;">Total : </span>
+                                            </div>
+                                            <div class="col-12">
+                                                <span id="txtTotal" style="font-size: 30px;color: #3d98ef;">0</span> Rs/=
+                                            </div>
+                                        </div>
 
-                            <!-- content -->
-                            <form>
-                                <div class="row">
-                                    <div class=" col-sm-6">
-                                        <label for="txtOrderId" class="form-label">Order ID:</label>
-                                        <input type="text" class="form-control" id="txtOrderId" placeholder="Order ID:">
                                     </div>
-                                    <div class=" col-sm-6">
-                                        <label class="datepicker_label">Date: </label>
-                                        <input type="text" class="form-control" id="txtDate">
-
-
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <span  style="color: #ef5350;font-size: 13px;">SubTotal : </span>
+                                            </div>
+                                            <div class="col-12">
+                                                <span id="txtSubtotal" style="color: #ef5350;font-size: 30px;">0</span> Rs/=
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="row">
 
-                                <div class="row">
-
-                                    <div class="col-sm-6">
-                                        <label  class="form-label">Customer ID</label>
-                                        <select class="form-select" aria-label="Default select example" id="cmbCustomer">
-                                            <option selected>Customer ID</option>
-                                        </select>
+                                                <div class="mb-3">
+                                                    <label for="txtCash" class="form-label">Cash</label>
+                                                    <input type="text" class="form-control" id="txtCash" placeholder="Cash">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="row">
+                                                <div class="mb-3">
+                                                    <label for="txtDiscount" class="form-label">Discount</label>
+                                                    <input type="text" class="form-control" id="txtDiscount" placeholder="Discount">
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <label for="txtCustomerNameCmb">Name:</label>
-                                        <input type="text" class="form-control" id="txtCustomerNameCmb" placeholder="Nimal">
+                                    <div class="mb-3">
+                                        <label for="txtBalance" class="form-label">Balance</label>
+                                        <input type="text" class="form-control" id="txtBalance" placeholder="Balance">
                                     </div>
-                                    <div class="col-sm-6">
-                                        <label for="txtCustomerSalaryCmb">Salary:</label>
-                                        <input type="text" class="form-control" id="txtCustomerSalaryCmb" placeholder="100,000.00">
-                                    </div>
-                                </div>
-
-                                <div class="row col">
-                                    <div class="custom-spacing-adding-for-customer-details-card">
-                                        <label for="txtCustomerAddressCmb">Address:</label>
-                                        <input type="text" class="form-control" id="txtCustomerAddressCmb" placeholder="Kandy">
-                                    </div>
-                                </div>
-                            </form>
-
+                                </form>
+                            </div>
                         </div>
                     </div>
-
-                </div>
-
-                <!-- product select card-->
-                <div class="feature-box col-lg-5">
-                    <div class="card">
-                        <h5 class="card-header card_custom_header">Product Details</h5>
-                        <div class="card-body">
-
-                            <!-- content -->
-                            <div class="container">
+                    <div id="cardPaymentForm">
+                        <form >
+                            <div class="col-12">
                                 <div class="row">
-                                    <div class="col">
-                                        <label for="cmdItems" class="form-label">Item ID</label>
-                                        <select class="form-select" aria-label="Default select example" id="cmdItems">
 
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <label for="txtGetItemName">Item Name:</label>
-                                        <input type="text" class="form-control" id="txtGetItemName" placeholder="Item Name">
-                                    </div>
-                                    <div class="col">
-                                        <label for="txtGetItemPrice">Price:</label>
-                                        <input type="text" class="form-control" id="txtGetItemPrice" placeholder="Price">
-                                    </div>
-                                    <div class="col">
-                                        <label for="txtGetQtyOnHand">QtyOnH:</label>
-                                        <input type="text" class="form-control" id="txtGetQtyOnHand" placeholder="QtyOnH">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <label style="margin-top: 3%;" for="txtOrderQty">Order Quantity:</label>
-                                        <input type="text" class="form-control" id="txtOrderQty" placeholder="Order Quantity">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col" id="custom-spacing-adding-for-add-new-button">
-                                        <button type="button" class="btn btn_to_left" id="btnAddItem">Add Item</button>
+                                    <div class="mb-3">
+                                        <label  class="form-label">Cash</label>
+                                        <input type="text" class="form-control" placeholder="Cash">
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-12">
+                                <div class="row">
 
-
-
-
-                        </div>
+                                    <div class="mb-3">
+                                        <label  class="form-label">Cash</label>
+                                        <input type="text" class="form-control" placeholder="Cash">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
                     </div>
-
-                </div>
-
-                <!-- style="margin-left: 5%; margin-top: 4%;" -->
-
-                <div class="feature-box col-lg-3">
-                    <div class="card">
-                        <div class="card-body">
-
-                            <!-- content -->
-                            <form>
-                                <div class="row">
-                                    <div class="col-sm-6" id="custom-spacing-adding-for-span-text">
-                                        <div class="col-sm-6">
-                                            <span  style="font-size: 13px;">Total : </span>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <span id="txtTotal" style="font-size: 30px;color: #15181b;">0</span> Rs/=
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-6">
-                                        <div class="col-sm-6">
-                                            <span  style="font-size: 13px;">SubTotal : </span>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <span id="txtSubtotal" style="color: #25b003;font-size: 30px;">0</span> Rs/=
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <label for="txtCash">Cash:</label>
-                                        <input type="text" class="form-control" id="txtCash" placeholder="Cash">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="txtDiscount">Discount</label>
-                                        <input type="text" class="form-control" id="txtDiscount" placeholder="Discount">
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <label for="txtBalance">Balance:</label>
-                                        <input type="text" class="form-control" id="txtBalance" placeholder="Balance">
-                                    </div>
-                                </div>
-
-                                <div class="row text-center">
-                                    <div col-md-4 id="custom-spacing-adding-for-purchase-button">
-                                        <button type="button" class="btn btn-success btnn-to-space btn-block" id="btnPurchase">Checkout</button>
-                                    </div>
-                                </div>
-
-
-                            </form>
-
+                    <div>
+                        <button type="button" class="btn btn-outline-primary"  id="btnBackFromPurchase">Back</button>
+                        <button type="button" class="btn btn-outline-primary" id="btnPurchase">Purchase</button>
+                        <button type="button" class="btn btn-outline-primary" id="btnClearPurchase">Clear</button>
+                    </div>
+                    <div>
+                        <label class="form-label">Order ID :</label>
+                        <label class="form-label" id="lblOrderId">OR00-001</label>
+                    </div>
+                    <div>
+                        <label class="form-label">Date :</label>
+                        <label class="form-label" id="lblOrderDate">OR00-001</label>
+                    </div>
+                    <div>
+                        <div class="col-6">
+                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Customer Code" id="txtCustomerCodeForPurchase">
+                        </div>
+                        <div class="col-6">
+                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Employee Code" id="txtEmployeeCodeForPurchase">
                         </div>
                     </div>
                 </div>
+                <div></div>
+                <div id="purchaseDetails">
+                    <button type="button" class="btn btn-outline-primary" id="btnToSaleFromPurchase">Back</button>
+                    <table class="table table-hover">
+                        <thead >
+                        <tr style="border: black">
+                            <th scope="col" >Order No</th>
+                            <th scope="col" >Customer Code</th>
+                            <th scope="col" >Customer Name</th>
+                            <th scope="col" >Total Price</th>
+                            <th scope="col" >Purchase Date</th>
+                            <th scope="col" >Payment Method</th>
+                            <th scope="col" >Added Point</th>
+                            <th scope="col" >Cashier Name</th>
+                            <th scope="col" >Employee Code</th>
+                        </tr>
+                        </thead>
+                        <tbody class="table-group-divider" id="tblPurchaseDetails" style="border: black">
 
-    </section>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </section>
+        <section id="admin">
+            <div>
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <label>Today's sales</label>
+                        <label>Rs 25000</label>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <label>Today's Profit</label>
+                        <label>Rs 25000</label>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <label>Most sale item</label>
+                        <label>Adidas</label>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <label>Customers</label>
+                        <label>100</label>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <label>Total items</label>
+                        <label>100</label>
+                    </div>
+                </div>
+            </div>
+            <div class="card" >
+                <img  class="card-img-top" alt="..." id="imgMostSellItem">
+                <div class="card-body">
+                    <label id="lblMostSellItemCode"></label>
+                    <label id="lblMostSellItemName"></label>
+                    <label id="lblMostSellItemStatus"></label>
+                    <label id="lblMostSellItemPrice"></label>
+                </div>
+            </div>
+            <div class="card" >
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+            <div class="card" >
+                <table class="table table-hover">
+                    <thead >
+                    <tr style="border: black">
+                        <th scope="col" >Item Code</th>
+                        <th scope="col" >Item Desc</th>
+                        <th scope="col" >Size</th>
+                        <th scope="col" >Price</th>
+                        <th scope="col" >Quantity</th>
+                        <th scope="col" >Total</th>
+                    </tr>
+                    </thead>
+                    <tbody class="table-group-divider"  style="border: black">
 
+                    </tbody>
+                </table>
+            </div>
 
-    <!-- table section -->
-    <section class="spacing_bet">
-        <table class="table">
-            <thead class="custom-table-color">
-            <tr>
-                <th scope="col">Item Code</th>
-                <th scope="col">Item Name</th>
-                <th scope="col">Price</th>
-                <th scope="col">Quantity</th>
-                <th scope="col">Total</th>
-            </tr>
-            </thead>
-            <tbody id="tblPlaceOrder">
+        </section>
 
-            </tbody>
-        </table>
-    </section>
+    <!--Sales Content End-->
+
 </main>
 
 <!--start order details-->
@@ -724,48 +911,70 @@
                                     <div class="form-row">
 
                                         <div class="container">
+
                                             <div class="row">
                                                 <div class="col custom-column">
-                                                    <label for="cmbSupplierType">Supplier Type:</label>
-                                                    <select class="form-select" aria-label="Default select example" id="cmbSupplierType">
-                                                        <option selected>Select</option>
-                                                        <option value="1">Local</option>
-                                                        <option value="2">International</option>
-                                                    </select>
+                                                    <label for="txtSupplierCode">Supplier Code:</label>
+                                                    <input class="form-control" id="txtSupplierCode">
                                                 </div>
                                                 <div class="col custom-column">
-                                                    <label for="txtSupplierCompanyName">Company:</label>
-                                                    <input class="form-control" id="txtSupplierCompanyName" placeholder="Company name">
+                                                    <label for="txtSupplierName">Supplier name:</label>
+                                                    <input class="form-control" id="txtSupplierName" ">
                                                 </div>
                                             </div>
+
                                             <div class="row">
                                                 <div class="col custom-column">
-                                                    <label for="txtSupplierCountry">Country/region:</label>
-                                                    <input class="form-control" id="txtSupplierCountry" placeholder="Country">
+                                                    <label for="txtSupplierCategory">Category:</label>
+                                                    <input class="form-control" id="txtSupplierCategory">
                                                 </div>
                                                 <div class="col custom-column">
-                                                    <label for="txtSupplierAddress">Address:</label>
-                                                    <input class="form-control" id="txtSupplierAddress" placeholder="Address">
+                                                    <label for="txtSupplierContactNo1">Contact No.1:</label>
+                                                    <input class="form-control" id="txtSupplierContactNo1">
                                                 </div>
                                             </div>
+
                                             <div class="row">
                                                 <div class="col custom-column">
-                                                    <label for="txtSupplierCity">City:</label>
-                                                    <input class="form-control" id="txtSupplierCity" placeholder="Country">
+                                                    <label for="txtSupplierContactNo2">Contact No.2:</label>
+                                                    <input class="form-control" id="txtSupplierContactNo2">
                                                 </div>
                                                 <div class="col custom-column">
-                                                    <label for="txtSupplierPostalCode">Postal Code:</label>
-                                                    <input class="form-control" id="txtSupplierPostalCode" placeholder="Postal Code">
+                                                    <label for="txtSupplierEmail">Email:</label>
+                                                    <input class="form-control" id="txtSupplierEmail">
                                                 </div>
                                             </div>
+
                                             <div class="row">
                                                 <div class="col custom-column">
-                                                    <label for="txtEmailAddress">Email Address:</label>
-                                                    <input class="form-control" id="txtEmailAddress" placeholder="Email Address">
+                                                    <label for="txtSupplierAddress1">Address Line 01:</label>
+                                                    <input class="form-control" id="txtSupplierAddress1">
                                                 </div>
                                                 <div class="col custom-column">
-                                                    <label for="txtSupplierPhoneNumber">Phone Number:</label>
-                                                    <input class="form-control" id="txtSupplierPhoneNumber" placeholder="Phone Number">
+                                                    <label for="txtSupplierEmail">Address Line 02:</label>
+                                                    <input class="form-control" id="txtSupplierAddress2">
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col custom-column">
+                                                    <label for="txtSupplierAddress3">Address Line 03:</label>
+                                                    <input class="form-control" id="txtSupplierAddress3">
+                                                </div>
+                                                <div class="col custom-column">
+                                                    <label for="txtSupplierAddress4">Address Line 04:</label>
+                                                    <input class="form-control" id="txtSupplierAddress4">
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col custom-column">
+                                                    <label for="txtSupplierAddress5">Address Line 05:</label>
+                                                    <input class="form-control" id="txtSupplierAddress5">
+                                                </div>
+                                                <div class="col custom-column">
+                                                    <label for="txtSupplierAddress6">Address Line 06:</label>
+                                                    <input class="form-control" id="txtSupplierAddress6">
                                                 </div>
                                             </div>
 
@@ -777,8 +986,8 @@
 
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-success" id="btnSupplierSave">Save</button>
-                                <button type="button" class="btn btn-success" id="btnSupplierUpdate">Update</button>
+                                <button type="button" class="btn btn-success" id="btnSaveSupplier">Save</button>
+                                <button type="button" class="btn btn-success" id="btnSupplirUpdate">Update</button>
                                 <button type="button" class="btn btn-success" id="btnSupplierDelete">Delete</button>
                                 <button type="button" class="btn btn-success" id="btn-clear-Supplier-form">ClearALl</button>
                             </div>
@@ -794,14 +1003,13 @@
         <table class="table">
             <thead class="custom-table-color">
             <tr>
-                <th scope="col">Supplier Id</th>
-                <th scope="col">Supplier Type</th>
-                <th scope="col">Company</th>
-                <th scope="col">Country/region</th>
+                <th scope="col">Code</th>
+                <th scope="col">Name</th>
+                <th scope="col">Category</th>
                 <th scope="col">Address</th>
-                <th scope="col">Email Address</th>
-                <th scope="col">Phone Number</th>
-                <th></th>
+                <th scope="col">Contact No.1</th>
+                <th scope="col">Contact No.2</th>
+                <th scope="col">Email</th>
             </tr>
             </thead>
             <tbody id="tblSupplier">
@@ -891,8 +1099,8 @@
                                                     <label for="txtEmployeeAccessRole">Access Role:</label>
                                                     <select class="form-select" aria-label="Default select example" id="txtEmployeeAccessRole">
                                                         <option selected>Select</option>
-                                                        <option value="1">Staff</option>
-                                                        <option value="2">Admin</option>
+                                                        <option value="1">STAFF</option>
+                                                        <option value="2">ADMIN</option>
                                                     </select>
                                                 </div>
                                                 <div class="col custom-column">
@@ -988,15 +1196,26 @@
         <table class="table">
             <thead class="custom-table-color">
             <tr>
-                <th scope="col">Employee Id</th>
-                <th scope="col">Employee Name</th>
-                <th scope="col">Email</th>
-                <th scope="col">Address</th>
-                <th scope="col">Phone Number</th>
+
+                <th scope="col">Code</th>
+                <th scope="col"></th>
+                <th scope="col">Name</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Status</th>
+                <th scope="col">Designation</th>
                 <th scope="col">Role</th>
+                <th scope="col">DOB</th>
+                <th scope="col">DOJ</th>
+                <th scope="col">Branch</th>
+                <th scope="col">Address</th>
+                <th scope="col">Contact No</th>
+                <th scope="col">Email</th>
+                <th scope="col">case of emergency</th>
+                <th scope="col">Emergency Contact</th>
+
             </tr>
             </thead>
-            <tbody id="tblStaff">
+            <tbody id="tblEmployee">
 
             </tbody>
         </table>
@@ -1117,7 +1336,9 @@
 <script src="controllers/CustomerController.js"></script>
 <script src="controllers/ItemController.js"></script>
 <script src="controllers/PlaceOrderController.js"></script>
+<script src="controllers/SupplierController.js"></script>
 <script src="controllers/EmployeeController.js"></script>
+<script src="controllers/SaleController.js"></script>
 
 <script src="controllers/validations/CustomerValidations.js"></script>
 <script src="controllers/validations/ItemValidations.js"></script>

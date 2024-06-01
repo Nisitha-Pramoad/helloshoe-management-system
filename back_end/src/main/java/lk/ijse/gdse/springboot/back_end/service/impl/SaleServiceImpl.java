@@ -1,6 +1,5 @@
 package lk.ijse.gdse.springboot.back_end.service.impl;
 
-import lk.ijse.gdse.springboot.back_end.dto.CustomerDTO;
 import lk.ijse.gdse.springboot.back_end.dto.InventoryDTO;
 import lk.ijse.gdse.springboot.back_end.dto.SaleDTO;
 import lk.ijse.gdse.springboot.back_end.dto.SaleDetailsDTO;
@@ -13,11 +12,11 @@ import lk.ijse.gdse.springboot.back_end.repository.InventoryRepo;
 import lk.ijse.gdse.springboot.back_end.repository.SaleDetailsRepo;
 import lk.ijse.gdse.springboot.back_end.repository.SaleRepo;
 import lk.ijse.gdse.springboot.back_end.service.SaleService;
+import lk.ijse.gdse.springboot.back_end.util.Level;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -45,13 +44,38 @@ public class SaleServiceImpl implements SaleService {
 
     @Override
     public void saveSale(SaleDTO saleDTO) {
-        SaleDTO saleDTO1=new SaleDTO(saleDTO.getOrderNo(),saleDTO.getCustomerCode(),saleDTO.getCustomerName(),saleDTO.getTotalPrice(),saleDTO.getPurchaseDate(),saleDTO.getPaymentMethod(),saleDTO.getAddedPoints(),saleDTO.getCashierName(),saleDTO.getEmployeeCode());
-        saleRepo.save(modelMapper.map(saleDTO1, Sale.class));
+        SaleDTO saleDTO1 = new SaleDTO(saleDTO.getOrderNo(), saleDTO.getCustomerCode(), saleDTO.getCustomerName(), saleDTO.getTotalPrice(), saleDTO.getPurchaseDate(), saleDTO.getPaymentMethod(), saleDTO.getAddedPoints(), saleDTO.getCashierName(), saleDTO.getEmployeeCode());
+        Sale sale=modelMapper.map(saleDTO1,Sale.class);
+
+        Customer customer = customerRepo.findById(saleDTO.getCustomerCode()).get();
+
+        int points=customer.getTotalPoint()+saleDTO.getAddedPoints();
+        customer.setTotalPoint(points);
+
+        Level loyaltyLevel = null;
+        if (points < 50){
+            loyaltyLevel = Level.New;
+        }else if (points >= 50 && points<99){
+            loyaltyLevel = Level.Bronze;
+        } else if (points >= 100 && points<199) {
+            loyaltyLevel = Level.Silver;
+        } else if (points >= 200) {
+            loyaltyLevel = Level.Gold;
+        }
+        customer.setLevel(loyaltyLevel);
+
+        customer.setRecentPurchaseDate(saleDTO.getPurchaseDate());
+        customerRepo.save(customer);
+
+        saleRepo.save(sale);
 
         for (SaleDetailsDTO detailsDTO:saleDTO.getSaleDetails()) {
-             SaleDetailsDTO saleDetailsDTO = new SaleDetailsDTO(detailsDTO.getOrderNo(), detailsDTO.getItemCode(), detailsDTO.getItemDesc(), detailsDTO.getSize(), detailsDTO.getQuantity(), detailsDTO.getUnitPrice());
-            saleDetailsRepo.save(modelMapper.map(saleDetailsDTO, SaleDetails.class));
-            System.out.println( "sale details"+detailsDTO);
+
+            SaleDetailsDTO saleDetailsDTO = new SaleDetailsDTO(detailsDTO.getItemCode(),detailsDTO.getItemDesc(), detailsDTO.getSize(), detailsDTO.getQuantity(), detailsDTO.getUnitPrice(), detailsDTO.getOrderNo());
+
+            SaleDetails saleDetails = modelMapper.map(saleDetailsDTO, SaleDetails.class);
+            saleDetailsRepo.save(saleDetails);
+
             if(detailsDTO.getSize()==5){
                 InventoryDTO inventoryDTO=modelMapper.map(inventoryRepo.findById(detailsDTO.getItemCode()).get(), InventoryDTO.class);
                 int qty=inventoryDTO.getQuantitySize5()-detailsDTO.getQuantity();
@@ -95,12 +119,7 @@ public class SaleServiceImpl implements SaleService {
                 inventoryRepo.save(modelMapper.map(inventoryDTO, Inventory.class));
             }
         }
-        CustomerDTO customerDTO=modelMapper.map(customerRepo.findById(saleDTO.getCustomerCode()).get(), CustomerDTO.class);
-        int point=customerDTO.getTotalPoint()+saleDTO.getAddedPoints();
-        customerDTO.setTotalPoint(point);
-        customerDTO.setRecentPurchaseDate(saleDTO.getPurchaseDate());
-        System.out.println(saleDTO.getPurchaseDate());
-        customerRepo.save(modelMapper.map(customerDTO, Customer.class));
+
     }
 
     @Override
@@ -145,16 +164,12 @@ public class SaleServiceImpl implements SaleService {
 
     @Override
     public List<SaleDetailsDTO> getAllRefundOrders() {
-        List<SaleDetailsDTO> refundDetails=new ArrayList<>();
-//        return saleRepo.getAllRefundOrders().stream().map(sale -> modelMapper.map(sale,SaleDTO.class)).toList();
          List<Sale> allRefundOrders = saleRepo.getAllRefundOrders();
         for (Sale sale:allRefundOrders) {
-             List<SaleDetailsDTO> orderDetailsByOrderId = saleDetailsRepo.findOrderDetailsByOrderId(sale.getOrderNo()).stream().map(saleDetails -> modelMapper.map(saleDetails,SaleDetailsDTO.class)).toList();
-            for (SaleDetailsDTO saleDetails:orderDetailsByOrderId) {
-               refundDetails.add(saleDetails);
-            }
+            return saleDetailsRepo.findOrderDetailsByOrderId(sale.getOrderNo()).stream().map(saleDetails -> modelMapper.map(saleDetails,SaleDetailsDTO.class)).toList();
+
         }
         System.out.println("refund : ");
-        return refundDetails;
+        return null;
     }
 }

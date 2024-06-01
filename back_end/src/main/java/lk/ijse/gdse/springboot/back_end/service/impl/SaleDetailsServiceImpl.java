@@ -42,13 +42,10 @@ public class SaleDetailsServiceImpl implements SaleDetailsService {
 
     @Override
     public SaleDetailsDTO getTopSale() {
-        /*return modelMapper.map(saleDetailsRepo.findTopByOrderByItemCode(),SaleDetailsDTO.class);*/
+//        SaleDetailsDTO saleDetailsDTO= modelMapper.map(saleDetailsRepo.findTopSellingItem(),SaleDetailsDTO.class);
+//        System.out.printf("Most selling item : %s\n",saleDetailsDTO);
         return null;
     }
 
-   /* @Override
-    public List<SaleDetailsDTO> getAllRefundOrders() {
-        return saleDetailsRepo.getAllRefundOrders().stream().map(saleDetails -> modelMapper.map(saleDetails,SaleDetailsDTO.class)).toList();
-    }*/
 
 }
